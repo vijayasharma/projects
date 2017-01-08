@@ -6,12 +6,25 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui">
-	
+
 <h:head>
 </h:head>
 <h:body>
-	<p:panel id="headerPanel" style="background-color: #F59C3B; height:100%" >
-				
-	</p:panel>
+	<h:panelGrid id="headerPanel" columns="3"
+		style="background-color: #F59C3B; height:100%" width="100%">
+		<h3>Jain Kalar Matrimony</h3>
+		<div></div>
+		<h:panelGrid border="1" width="100%">
+			<h:panelGroup>
+				<p:link outcome="home" value="Home" />
+			</h:panelGroup>
+			<h:panelGroup>
+				<p:link outcome="register" value="Registration Page" />
+
+
+			</h:panelGroup>
+		</h:panelGrid>
+
+	</h:panelGrid>
 </h:body>
 </html>

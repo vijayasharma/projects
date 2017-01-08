@@ -12,8 +12,9 @@
 </h:head>
 
 <h:body>
-	<p:layout>
-		<p:layoutUnit position="north" size="200">
+	<p:layout fullPage="true">
+	
+		<p:layoutUnit position="north" size="200" resizable="false">
 			<ui:insert name="header">
 				<ui:include src="/WEB-INF/views/common/parts/header.xhtml" />
 			</ui:insert>
@@ -23,15 +24,7 @@
 				<ui:include src="/WEB-INF/views/common/parts/footer.xhtml" />
 			</ui:insert>
 		</p:layoutUnit>
-		<p:layoutUnit position="west" size="200">
-			<ui:insert name="navBar">
-				<ui:include src="/WEB-INF/views/common/parts/navBar.xhtml" />
-			</ui:insert>
-		</p:layoutUnit>
-		<p:layoutUnit position="east" size="200">
-			<h:outputText value="Right Content" />
-		</p:layoutUnit>
-		<p:layoutUnit position="center">
+		<p:layoutUnit position="center" size="500" minSize="200">
 			<ui:insert name="content">
 				<ui:include src="/WEB-INF/views/common/parts/noContent.xhtml" />
 			</ui:insert>
