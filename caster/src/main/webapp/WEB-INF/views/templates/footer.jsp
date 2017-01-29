@@ -16,8 +16,8 @@
 			
 			<spring:url value="/aboutUs" var="aboutUsVar" htmlEscape="true"/>
 			<spring:url value="/home" var="homeVar" htmlEscape="true"/>
-			
-			 <a href="${homeVar}">Home</a> | <a href="${aboutUsVar}">About Us</a> | <a href='<spring:url value="/contactUs"/>'>Contact Us</a> 
+			<a href="${homeVar}">Home</a> | <a href="${aboutUsVar}">About Us</a> | <a href='<spring:url value="/contactUs"/>'>Contact Us</a> 
+			|  <a href='<spring:url value="/register"/>'>Register</a> 
 			
 		</div>
 	</div>

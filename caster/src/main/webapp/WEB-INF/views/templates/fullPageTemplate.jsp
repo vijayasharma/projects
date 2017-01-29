@@ -13,14 +13,14 @@
 <head>
 <title><tiles:getAsString name="title" /></title>
 
-
 <jsp:include page="includes.jsp"></jsp:include>
 
 </head>
 <body>
 
-	<div class="container-fluid" style="background-color: #EEEEEE;">
+	<div class="container-fluid">
 		<div class="row">
+			<div class="col-md-12"><tiles:insertAttribute name="header" /></div>
 			<div class="col-md-12"><tiles:insertAttribute name="body" /></div>
 			<div class="col-md-12"><tiles:insertAttribute name="footer" /></div>
 		</div>
