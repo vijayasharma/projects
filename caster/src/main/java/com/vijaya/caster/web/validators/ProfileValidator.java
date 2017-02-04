@@ -35,21 +35,21 @@ public class ProfileValidator implements Validator {
 			p = (Profile) target;
 		}
 
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "firstName", "fieldIsRequired", "First Name is required.");
+		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "profile.firstName", "fieldIsRequired", "First Name is required.");
 
 		if (p.getGender() == null || !(p.getGender().equals("Male") || p.getGender().equals("Female"))) {
-			errors.rejectValue("gender", "profile.gender.required", "Please select Gender");
+			errors.rejectValue("profile.gender", "profile.gender.required", "Please select Gender");
 		}
 
 		if (p.getDateOfBirth() == null) {
-			errors.rejectValue("dateOfBirth", "profile.dateOfBirth.null", "Date of Birth is required.");
+			errors.rejectValue("profile.dateOfBirth", "profile.dateOfBirth.null", "Date of Birth is required.");
 		} else if (p.getDateOfBirth().after(new Date())) {
-			errors.rejectValue("dateOfBirth", "profile.dateOfBirth.future", "Date of Birth should be in the past.");
+			errors.rejectValue("profile.dateOfBirth", "profile.dateOfBirth.future", "Date of Birth should be in the past.");
 		}
 
 		if (p.getPhone() != null && p.getPhone().trim().length() != 0) {
 			if (p.getPhone().matches("\\d+") || p.getPhone().length() != 10) {
-				errors.rejectValue("phone", "profile.phone", "Mobile number should be 10 digit");
+				errors.rejectValue("profile.phone", "profile.phone", "Mobile number should be 10 digit");
 			}
 		}
 
@@ -59,7 +59,7 @@ public class ProfileValidator implements Validator {
 			pattern = Pattern.compile(Constants.EMAIL_PATTERN);
 			matcher = pattern.matcher(p.getEmail());
 			if (!matcher.matches()) {
-				errors.rejectValue("email", "email.incorrect", "Enter a correct email");
+				errors.rejectValue("profile.email", "email.incorrect", "Enter a correct email");
 				logger.info("Email is incorrect: " + p.getEmail());
 			}
 		} else {

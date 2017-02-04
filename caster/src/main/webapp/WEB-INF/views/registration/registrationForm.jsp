@@ -13,79 +13,101 @@
 	<h3>New User Registration</h3>
 </div>
 	
-<form:form method="POST" commandName="profile" cssClass="form-horizontal">
+<form:form method="POST" commandName="registration" cssClass="form-horizontal">
 
-		<spring:bind path="firstName">
+		<spring:bind path="profile.firstName">
 			<div class="form-group ${status.error ? 'has-error' : ''}">
 				<label class="control-label col-sm-2" for="email">Name:</label>
 				<div class="col-sm-3">
-					<form:input path="firstName" value="${firstName}" class="form-control" id="firstName" placeholder="First Name" />
+					<form:input path="profile.firstName" value="${profile.firstName}" class="form-control" id="firstName" placeholder="First Name" />
 				</div>
 				<div class="col-sm-3">
-					<form:input path="lastName"  value="${lastName}"  class="form-control" id="lastName" placeholder="Last Name" />
+					<form:input path="profile.lastName"  value="${profile.lastName}"  class="form-control" id="lastName" placeholder="Last Name" />
 				</div>
 				<div class="col-sm-4">
-					<form:errors path="firstName" cssClass="text-danger text-left" />
+					<form:errors path="profile.firstName" cssClass="text-danger text-left" />
 				</div>
 			</div>
 		</spring:bind>
 
 
-		<spring:bind path="gender">
+		<spring:bind path="profile.gender">
 			<div class="form-group ${status.error ? 'has-error' : ''}">
-				<form:label path="gender" cssClass="col-sm-2 control-label">Gender</form:label>
+				<form:label path="profile.gender" cssClass="col-sm-2 control-label">Gender</form:label>
 				<div class="col-sm-6">
-					<label class="radio-inline"> <form:radiobutton path="gender" value="Male" /> Male</label>
-					<label class="radio-inline"> <form:radiobutton path="gender" value="Female" /> Female</label>
+					<label class="radio-inline"> <form:radiobutton path="profile.gender" value="Male" /> Male</label>
+					<label class="radio-inline"> <form:radiobutton path="profile.gender" value="Female" /> Female</label>
 				</div>
 				<div class="col-sm-4">
-					<form:errors path="gender" cssClass="text-danger text-left" />
+					<form:errors path="profile.gender" cssClass="text-danger text-left" />
 				</div>
 			</div>
 		</spring:bind>
 
 
-		<spring:bind path="dateOfBirth">
+		<spring:bind path="profile.dateOfBirth">
 			<div class="form-group ${status.error ? 'has-error' : ''}">
-				<form:label path="dateOfBirth" cssClass="col-sm-2 control-label">Date Of Birth</form:label>
+				<form:label path="profile.dateOfBirth" cssClass="col-sm-2 control-label">Date Of Birth</form:label>
 				<div class="col-sm-6">
-					<fmt:formatDate value="${dateOfBirth}" var="dateString" pattern="dd/MM/yyyy" />
-					<form:input path="dateOfBirth" value="${dateString}" cssClass="form-control" placeholder="dd/MM/yyyy" />
+					<fmt:formatDate value="${profile.dateOfBirth}" var="dateString" pattern="dd/MM/yyyy" />
+					<form:input path="profile.dateOfBirth" value="${dateString}" cssClass="form-control" placeholder="dd/MM/yyyy" />
 				</div>
 				<div class="col-sm-4">
-					<form:errors path="dateOfBirth" cssClass="text-danger text-left" />
+					<form:errors path="profile.dateOfBirth" cssClass="text-danger text-left" />
 				</div>
 			</div>
 		</spring:bind>
 
-		<spring:bind path="email">
+		<spring:bind path="profile.email">
 			<div class="form-group">
-				<form:label path="email" cssClass="col-sm-2 control-label">Email</form:label>
+				<form:label path="profile.email" cssClass="col-sm-2 control-label">Email</form:label>
 				<div class="col-sm-6">
-					<form:input path="email" value="${email}" cssClass="form-control"
+					<form:input path="profile.email" value="${profile.email}" cssClass="form-control"
 						placeholder="e.g. email@gmail.com" />
 				</div>
 				<div class="col-sm-4">
-					<form:errors path="email" cssClass="text-danger text-left" />
+					<form:errors path="profile.email" cssClass="text-danger text-left" />
 				</div>
 			</div>
 		</spring:bind>
 		
-		
-		<spring:bind path="phone">		
+		<spring:bind path="newPassword">
 			<div class="form-group">
-				<form:label path="phone" cssClass="col-sm-2 control-label">Mobile Number</form:label>
+				<form:label path="newPassword" cssClass="col-sm-2 control-label">Password</form:label>
+				
 				<div class="col-sm-6">
-					<form:input path="phone" value="${phone}" cssClass="form-control" placeholder="Mobile Number" maxlength="10" />
+					<form:password path="newPassword" value="${newPassword}" cssClass="form-control" />
 				</div>
 				<div class="col-sm-4">
-					<form:errors path="phone" cssClass="text-danger text-left" />
+					<form:errors path="newPassword" cssClass="text-danger text-left" />
+				</div>
+			</div>
+		</spring:bind>
+		
+		<spring:bind path="confPassword">
+			<div class="form-group">
+				<form:label path="confPassword" cssClass="col-sm-2 control-label">Confirm Password</form:label>
+				
+				<div class="col-sm-6">
+					<form:password path="confPassword" value="${confPassword}" cssClass="form-control" />
+				</div>
+				<div class="col-sm-4">
+					<form:errors path="confPassword" cssClass="text-danger text-left" />
+				</div>
+			</div>
+		</spring:bind>
+		
+		<spring:bind path="profile.phone">		
+			<div class="form-group">
+				<form:label path="profile.phone" cssClass="col-sm-2 control-label">Mobile Number</form:label>
+				<div class="col-sm-6">
+					<form:input path="profile.phone" value="${profile.phone}" cssClass="form-control" placeholder="10 digit Mobile Number" maxlength="10" />
+				</div>
+				<div class="col-sm-4">
+					<form:errors path="profile.phone" cssClass="text-danger text-left" />
 				</div>
 			</div>
 		</spring:bind>		
-
-
-		
 
 		<div class="form-group">
 			<div class="col-sm-offset-2 col-sm-6">
