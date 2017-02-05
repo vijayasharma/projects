@@ -20,7 +20,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.vijaya.caster.domain.Profile;
-import com.vijaya.caster.domain.RegistrationDto;
 import com.vijaya.caster.utils.Constants;
 import com.vijaya.caster.web.validators.PasswordValidator;
 import com.vijaya.caster.web.validators.ProfileValidator;
@@ -69,21 +68,20 @@ public class RegistrationController {
 		logger.info("Inside showRegistrationForm method.");
 		ModelAndView mav = new ModelAndView();
 
-		//Profile p = new Profile();
-		RegistrationDto dto = new RegistrationDto();
-		mav.addObject("registration", dto);
+		Profile p = new Profile();
+		mav.addObject("profile", p);
 
 		mav.setViewName("registration");
 		return mav;
 	}
 
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
-	public String patientSubmit(@ModelAttribute("registration") RegistrationDto registrationDto, BindingResult result, ModelMap model) {
+	public String patientSubmit(@ModelAttribute("profile") Profile profile, BindingResult result, ModelMap model) {
 
-		logger.info("New Profile to be saved: {}", registrationDto);
+		logger.info("New Profile to be saved: {}", profile);
 		
-		profileValidator.validate(registrationDto.getProfile(), result);
-		passwordValidator.validate(registrationDto, result);
+		profileValidator.validate(profile, result);
+		passwordValidator.validate(profile, result);
 
 		if (result.hasErrors()) {
 			logger.info("Errors:  {} ", result.getAllErrors());

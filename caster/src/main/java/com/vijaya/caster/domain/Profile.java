@@ -12,6 +12,8 @@ public class Profile {
 	private Date dateOfBirth;
 	private String subCaste;
 	private String email;
+	private String password;
+	private String confPassword;
 	private String phone;
 	private String alternatePhone;
 	private Address address;
@@ -83,6 +85,22 @@ public class Profile {
 		this.email = email;
 	}
 
+	public String getPassword() {
+		return password;
+	}
+	
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	
+	public String getConfPassword() {
+		return confPassword;
+	}
+	
+	public void setConfPassword(String confPassword) {
+		this.confPassword = confPassword;
+	}
+	
 	public String getPhone() {
 		return phone;
 	}
@@ -111,8 +129,8 @@ public class Profile {
 	public String toString() {
 		return "Profile [profileId=" + profileId + ", username=" + username + ", firstName=" + firstName + ", lastName="
 				+ lastName + ", gender=" + gender + ", dateOfBirth=" + dateOfBirth + ", subCaste=" + subCaste
-				+ ", email=" + email + ", phone=" + phone + ", alternatePhone=" + alternatePhone + ", address="
-				+ address + "]";
+				+ ", email=" + email + ", password=" + password + ", confPassword=" + confPassword + ", phone=" + phone
+				+ ", alternatePhone=" + alternatePhone + ", address=" + address + "]";
 	}
 	
 }

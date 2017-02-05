@@ -1,36 +1,44 @@
 package com.vijaya.caster.web.validators;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
 import com.vijaya.caster.domain.Profile;
-import com.vijaya.caster.domain.RegistrationDto;
 
 @Component
 public class PasswordValidator implements Validator {
 
+	private static final Logger logger = LoggerFactory.getLogger(PasswordValidator.class);
+	
 	@Override
 	public boolean supports(Class<?> registrationDto) {
-		return RegistrationDto.class.isAssignableFrom(registrationDto);
+		return Profile.class.isAssignableFrom(registrationDto);
 	}
 
 	@Override
 	public void validate(Object target, Errors errors) {
 
-		RegistrationDto r = null;
-		if (target instanceof RegistrationDto) {
-			r = (RegistrationDto) target;
+		Profile p = null;
+		if (target instanceof Profile) {
+			p = (Profile) target;
 		}
 
-		if (r.getNewPassword() != null && r.getConfPassword() != null) {
-			if (! r.getNewPassword().equals(r.getConfPassword())) {
-				errors.rejectValue("newPassword", "Passwords do not match");
-				errors.rejectValue("confPassword", "Passwords do not match");
+		
+		logger.info("Inside password validator - Password={}, ConfPassword={}", p.getPassword(), p.getConfPassword());
+		
+		if (p.getPassword() != null && p.getConfPassword() != null) {
+			if (! p.getPassword().equals(p.getConfPassword())) {
+				logger.info("Validation failed. Passwords do not match");
+				errors.rejectValue("password","password", "Passwords do not match");
+				errors.rejectValue("confPassword","confPassword", "Passwords do not match");
 			}
 		} else {
-			errors.rejectValue("newPassword", "Passwords do not match");
-			errors.rejectValue("confPassword", "Passwords do not match");
+			logger.info("Validation failed. Passwords do not match. Values not provided.");
+			errors.rejectValue("password","password", "Passwords do not match");
+			errors.rejectValue("confPassword","confPassword", "Passwords do not match");
 		}
 
 	}
