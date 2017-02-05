@@ -9,11 +9,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
+@RequestMapping(value = "/user")
 public class ProfileController {
 
 	private static final Logger logger = LoggerFactory.getLogger(ProfileController.class);
 
-	@RequestMapping(value = "/user/home", method = RequestMethod.GET)
+	@RequestMapping(value = "/home", method = RequestMethod.GET)
 	public ModelAndView showUserHome(Model model) {
 		
 		logger.info("Inside showUserHome method.");
