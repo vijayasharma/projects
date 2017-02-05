@@ -84,7 +84,7 @@ public class RegistrationController {
 	}
 
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
-	public String patientSubmit(@ModelAttribute("profile") Profile profile, BindingResult result, ModelMap model) {
+	public String processRegistrationForm(@ModelAttribute("profile") Profile profile, BindingResult result, ModelMap model) {
 
 		logger.info("New Profile to be saved: {}", profile);
 		

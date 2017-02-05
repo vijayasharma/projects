@@ -3,6 +3,7 @@
         "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"  
         "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 <tiles-definitions>
+
 	<definition name="home.page.template" template="/WEB-INF/views/templates/homePageTemplate.jsp">
 		<put-attribute name="title" value="Home" />
 		<put-attribute name="header" value="/WEB-INF/views/templates/header.jsp" />
@@ -40,6 +41,11 @@
 	<definition name="registration" extends="full.page.template">
 		<put-attribute name="title" value="Home" />
     	<put-attribute name="body" value="/WEB-INF/views/registration/registrationForm.jsp" />
+	</definition>
+	
+	<definition name="user.home" extends="full.page.template">
+		<put-attribute name="title" value="User Home" />
+    	<put-attribute name="body" value="/WEB-INF/views/user/userHome.jsp" />
 	</definition>
 	
 </tiles-definitions>

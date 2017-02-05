@@ -21,7 +21,7 @@
 	<security:http auto-config="true">
 	
 		<security:form-login login-page="/home"
-			default-target-url="/profile/home" 
+			default-target-url="/user/home" 
 			authentication-failure-url="/home?error" 
 			login-processing-url="/j_spring_security_check"
 			username-parameter="username" 

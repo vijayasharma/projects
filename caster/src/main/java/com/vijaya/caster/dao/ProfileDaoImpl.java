@@ -39,7 +39,9 @@ public class ProfileDaoImpl implements ProfileDao{
 			
 			@Override
 			public PreparedStatement createPreparedStatement(Connection conn) throws SQLException {
+				
 				PreparedStatement ps = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+				
 				ps.setString(1, profile.getFirstName());
 				ps.setString(2, profile.getLastName());
 				if(profile.getDateOfBirth() != null){
