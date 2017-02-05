@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.vijaya.caster.domain.Profile;
+import com.vijaya.caster.services.RegistrationService;
 import com.vijaya.caster.utils.Constants;
 import com.vijaya.caster.web.validators.PasswordValidator;
 import com.vijaya.caster.web.validators.ProfileValidator;
@@ -35,12 +36,19 @@ public class RegistrationController {
 	@Autowired
 	private PasswordValidator passwordValidator; 
 
+	@Autowired
+	private RegistrationService registrationService;
+	
 	public void setProfileValidator(ProfileValidator profileValidator) {
 		this.profileValidator = profileValidator;
 	}
 
 	public void setPasswordValidator(PasswordValidator passwordValidator) {
 		this.passwordValidator = passwordValidator;
+	}
+	
+	public void setRegistrationService(RegistrationService registrationService) {
+		this.registrationService = registrationService;
 	}
 	
 	@InitBinder
@@ -81,15 +89,16 @@ public class RegistrationController {
 		logger.info("New Profile to be saved: {}", profile);
 		
 		profileValidator.validate(profile, result);
-		passwordValidator.validate(profile, result);
+		// passwordValidator.validate(profile, result);
 
 		if (result.hasErrors()) {
 			logger.info("Errors:  {} ", result.getAllErrors());
-						
 			return "registration";
 		}
 
 		logger.info("Profile validation was successful");
+		
+		registrationService.saveProfile(profile);
 		
 		return "redirect:/home";
 	}

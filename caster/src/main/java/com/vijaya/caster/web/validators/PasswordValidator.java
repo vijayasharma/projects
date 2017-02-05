@@ -29,7 +29,7 @@ public class PasswordValidator implements Validator {
 		
 		logger.info("Inside password validator - Password={}, ConfPassword={}", p.getPassword(), p.getConfPassword());
 		
-		if (p.getPassword() != null && p.getConfPassword() != null) {
+		if (p.getPassword() != null && p.getConfPassword() != null && p.getPassword().isEmpty() && p.getConfPassword().isEmpty()) {
 			if (! p.getPassword().equals(p.getConfPassword())) {
 				logger.info("Validation failed. Passwords do not match");
 				errors.rejectValue("password","password", "Passwords do not match");
