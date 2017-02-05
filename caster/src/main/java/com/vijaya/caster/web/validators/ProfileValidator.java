@@ -47,13 +47,13 @@ public class ProfileValidator implements Validator {
 			errors.rejectValue("dateOfBirth", "dateOfBirth.future", "Date of Birth should be in the past.");
 		}
 
-		/*if (p.getPhone() != null && p.getPhone().trim().length() != 0) {
+		if (p.getPhone() != null && p.getPhone().trim().length() != 0) {
 			if (p.getPhone().matches("\\d+") || p.getPhone().length() != 10) {
-				errors.rejectValue("phone", "phone", "Mobile number should be 10 digit");
+				errors.rejectValue("phone", "phone.invalid", "Mobile number should be 10 digit");
 			}
 		}else{
-			errors.rejectValue("phone", "phone", "Mobile number is Required");
-		}*/
+			errors.rejectValue("phone", "phone.required", "Mobile number is Required");
+		}
 
 		// email validation in spring
 		if (!(p.getEmail() != null && p.getEmail().isEmpty())) {
