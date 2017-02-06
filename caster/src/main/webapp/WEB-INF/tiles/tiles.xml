@@ -31,10 +31,12 @@
 	
 	<definition name="user.home" extends="secure.user.template">
 		<put-attribute name="title" value="User Home" />
-		<put-attribute name="header" value="/WEB-INF/views/templates/secureHeader.jsp" />
-		<put-attribute name="leftColumn" value="/WEB-INF/views/user/userLeftBar.jsp" />
-		<put-attribute name="rightColumn" value="/WEB-INF/views/user/userRightBar.jsp" />
     	<put-attribute name="body" value="/WEB-INF/views/user/userHome.jsp" />
+	</definition>
+
+	<definition name="user.profile.update.form" extends="secure.user.template">
+		<put-attribute name="title" value="User Home" />
+    	<put-attribute name="body" value="/WEB-INF/views/user/userProfileUpdateForm.jsp" />
 	</definition>
 	
 </tiles-definitions>

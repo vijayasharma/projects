@@ -8,11 +8,13 @@ import java.sql.Statement;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.stereotype.Repository;
 
+import com.vijaya.caster.dao.mappers.ProfileRowMapper;
 import com.vijaya.caster.domain.Profile;
 
 @Repository(value="profileDao")
@@ -63,8 +65,10 @@ public class ProfileDaoImpl implements ProfileDao{
 
 	@Override
 	public Profile getProfileById(Long profileId) {
-		// TODO Auto-generated method stub
-		return null;
+		logger.info("Inside Dao getProfileById method");
+		String sql = "select profile_id, first_name, last_name, DATE_OF_BIRTH, Gender from PROFILES where profile_id=?";
+		Profile p = this.jdbcTemplate.queryForObject(sql, new Object[]{profileId}, new ProfileRowMapper());
+		return p;
 	}
 
 	@Override
