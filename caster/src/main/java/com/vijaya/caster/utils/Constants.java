@@ -19,4 +19,9 @@ public interface Constants {
 
 	String EMAIL_PATTERN = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
 			+ "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+	
+	// views
+	String VIEW_USER_HOME = "user.home";
+	String VIEW_USER_PROFILE_UPDATE_FORM = "user.profile.update.form";
+	
 }

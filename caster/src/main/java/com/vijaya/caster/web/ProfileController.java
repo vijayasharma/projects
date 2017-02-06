@@ -11,6 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.vijaya.caster.domain.Profile;
 import com.vijaya.caster.services.ProfileService;
+import com.vijaya.caster.utils.Constants;
 
 @Controller
 @RequestMapping(value = "/user")
@@ -44,9 +45,15 @@ public class ProfileController {
 
 		ModelAndView mav = new ModelAndView();
 		Profile p = this.profileService.getProfileById(2L);
-		mav.addObject("p",p);
 		
-		mav.setViewName("user.profile.update.form");
+		if(p != null){
+			mav.addObject("p",p);
+			mav.setViewName(Constants.VIEW_USER_PROFILE_UPDATE_FORM);
+		}else{
+			mav.setViewName(Constants.VIEW_USER_HOME);
+		}
+		
+		
 		return mav;
 		
 	}

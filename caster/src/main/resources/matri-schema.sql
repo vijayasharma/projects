@@ -1,19 +1,25 @@
 create schema caster;
 use caster;
 
+
+drop table authorities;
+drop table users;
+
+
 CREATE TABLE USERS (
-USERNAME VARCHAR(10) NOT NULL,
+USERNAME VARCHAR(150) NOT NULL,
 PASSWORD VARCHAR(32) NOT NULL,
 ENABLED SMALLINT,
 PRIMARY KEY (USERNAME)
 );
 
 CREATE TABLE authorities (
-USERNAME VARCHAR(10) NOT NULL,
+USERNAME VARCHAR(150) NOT NULL,
 AUTHORITY VARCHAR(10) NOT NULL,
 FOREIGN KEY (USERNAME) REFERENCES USERS(USERNAME) 
 );
 
+INSERT INTO USERS (USERNAME, PASSWORD, ENABLED) VALUES (?,?,?);
 insert into users(username, password,enabled) values('bharat','pass',1);
 insert into authorities(username,authority) values('bharat','ROLE_ADMIN');
 insert into authorities(username,authority) values('bharat','ROLE_USER');
@@ -30,7 +36,8 @@ create table PROFILES(
     DATE_OF_BIRTH DATETIME,
     GENDER VARCHAR(6),
     EMAIL VARCHAR(150),
-    MOBILE VARCHAR(10),
+    PHONE VARCHAR(10),
+    ALTERNATE_PHONE VARCHAR(10),
     MARITAL_STATUS VARCHAR(20),
 	HAVE_CHILDREN VARCHAR(50),
     MOTHER_TONGUE VARCHAR(100),

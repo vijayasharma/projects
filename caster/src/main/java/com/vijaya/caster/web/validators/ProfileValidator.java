@@ -48,7 +48,7 @@ public class ProfileValidator implements Validator {
 		}
 
 		if (p.getPhone() != null && p.getPhone().trim().length() != 0) {
-			if (p.getPhone().matches("\\d+") || p.getPhone().length() != 10) {
+			if (p.getPhone().length() != 10) {
 				errors.rejectValue("phone", "phone.invalid", "Mobile number should be 10 digit");
 			}
 		}else{

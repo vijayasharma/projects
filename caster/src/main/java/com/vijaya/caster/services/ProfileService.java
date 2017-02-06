@@ -5,20 +5,31 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.vijaya.caster.dao.ProfileDao;
+import com.vijaya.caster.dao.UserDao;
 import com.vijaya.caster.domain.Profile;
+import com.vijaya.caster.domain.User;
 
 @Service
 public class ProfileService {
 
 	@Autowired
 	private ProfileDao profileDao;
+	@Autowired
+	private UserDao userDao;
 	
 	public void setProfileDao(ProfileDao profileDao) {
 		this.profileDao = profileDao;
 	}
 	
+	public void setUserDao(UserDao userDao) {
+		this.userDao = userDao;
+	}
+	
 	@Transactional
 	public Profile getProfileById(Long profileId){
+
 		return profileDao.getProfileById(profileId) ;
 	}
+	
+	
 }
