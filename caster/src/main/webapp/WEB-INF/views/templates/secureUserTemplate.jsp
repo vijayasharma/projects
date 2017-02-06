@@ -22,7 +22,7 @@
 		<div class="row">
 			<div class="col-sm-12"><tiles:insertAttribute name="header" /></div>
 			<div class="col-sm-12">
-				<div class="row">
+				<div class="row" style="padding-top:60px;">
 					<div class="col-sm-3"><tiles:insertAttribute name="leftColumn" /></div>
 					<div class="col-sm-6"><tiles:insertAttribute name="body" /></div>
 					<div class="col-sm-3"><tiles:insertAttribute name="rightColumn" /></div>
