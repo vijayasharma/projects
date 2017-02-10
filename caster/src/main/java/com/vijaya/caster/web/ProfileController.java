@@ -82,6 +82,8 @@ public class ProfileController {
 		
 		if(p != null){
 			mav.addObject("p",p);
+			mav.addObject("maritalStatusList", this.profileService.getEnumsByGroup(Constants.ENUM_MARITAL_STATUS));
+			
 			mav.setViewName(Constants.VIEW_USER_PROFILE_UPDATE_FORM);
 		}else{
 			mav.setViewName(Constants.VIEW_USER_HOME);

@@ -13,6 +13,11 @@
 	
 	<div class="container-fluid">
 		<div class="row">
+			<div class="col-sm-12">
+				<a href='<c:url value="/user/profile/edit"/>' class="btn btn-xs btn-primary">Edit Profile</a>
+			</div>
+		</div>
+		<div class="row">
 			<div class="col-sm-3">
 				<label class="control-label">Name:</label>
 			</div>
@@ -33,7 +38,8 @@
 				<label class="control-label">Date of Birth:</label>
 			</div>
 			<div class="col-sm-9">
-				${p.dateOfBirth}
+				<fmt:formatDate value="${p.dateOfBirth}" var="dateString" pattern="dd-MMM-yyyy" />
+				${dateString} <span class="badge">Age - ${p.age} years</span>
 			</div>
 		</div>
 	</div>

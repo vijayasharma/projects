@@ -68,7 +68,7 @@ public class ProfileDaoImpl implements ProfileDao {
 	public Profile getProfileById(Long profileId) {
 		logger.info("Inside Dao getProfileById method");
 		String sql = "SELECT PROFILE_ID, FIRST_NAME, LAST_NAME, DATE_OF_BIRTH,"
-				+ " GENDER, PHONE, ALTERNATE_PHONE from PROFILES WHERE PROFILE_ID=?";
+				+ " GENDER, EMAIL, PHONE, ALTERNATE_PHONE from PROFILES WHERE PROFILE_ID=?";
 		Profile p = null;
 		try {
 			p = this.jdbcTemplate.queryForObject(sql, new Object[] { profileId }, new ProfileRowMapper());
@@ -92,9 +92,9 @@ public class ProfileDaoImpl implements ProfileDao {
 
 	@Override
 	public Profile getProfileByEmail(String emailId) {
-		logger.info("Inside Dao getProfileById method");
+		logger.info("Inside Dao getProfileByEmail method. emailId={}", emailId);
 		String sql = "SELECT PROFILE_ID, FIRST_NAME, LAST_NAME, DATE_OF_BIRTH,"
-				+ " GENDER, PHONE, ALTERNATE_PHONE from PROFILES WHERE EMAIL=?";
+				+ " GENDER,EMAIL, PHONE, ALTERNATE_PHONE, MARITAL_STATUS from PROFILES WHERE EMAIL=?";
 		Profile p = null;
 		try {
 			p = this.jdbcTemplate.queryForObject(sql, new Object[] { emailId }, new ProfileRowMapper());
