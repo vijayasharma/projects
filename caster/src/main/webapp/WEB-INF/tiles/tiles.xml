@@ -34,6 +34,12 @@
     	<put-attribute name="body" value="/WEB-INF/views/user/userHome.jsp" />
 	</definition>
 
+	<definition name="user.profile" extends="secure.user.template">
+		<put-attribute name="title" value="User Home" />
+    	<put-attribute name="body" value="/WEB-INF/views/user/userProfileView.jsp" />
+	</definition>
+	
+
 	<definition name="user.profile.update.form" extends="secure.user.template">
 		<put-attribute name="title" value="User Home" />
     	<put-attribute name="body" value="/WEB-INF/views/user/userProfileUpdateForm.jsp" />

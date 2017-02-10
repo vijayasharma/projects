@@ -7,7 +7,6 @@ import org.springframework.transaction.annotation.Transactional;
 import com.vijaya.caster.dao.ProfileDao;
 import com.vijaya.caster.dao.UserDao;
 import com.vijaya.caster.domain.Profile;
-import com.vijaya.caster.domain.User;
 
 @Service
 public class ProfileService {
@@ -29,6 +28,12 @@ public class ProfileService {
 	public Profile getProfileById(Long profileId){
 
 		return profileDao.getProfileById(profileId) ;
+	}
+	
+	@Transactional
+	public Profile getProfileByEmail(String emailId){
+
+		return profileDao.getProfileByEmail(emailId) ;
 	}
 	
 	

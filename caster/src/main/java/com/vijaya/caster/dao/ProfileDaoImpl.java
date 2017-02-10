@@ -90,4 +90,18 @@ public class ProfileDaoImpl implements ProfileDao {
 		return 0;
 	}
 
+	@Override
+	public Profile getProfileByEmail(String emailId) {
+		logger.info("Inside Dao getProfileById method");
+		String sql = "SELECT PROFILE_ID, FIRST_NAME, LAST_NAME, DATE_OF_BIRTH,"
+				+ " GENDER, PHONE, ALTERNATE_PHONE from PROFILES WHERE EMAIL=?";
+		Profile p = null;
+		try {
+			p = this.jdbcTemplate.queryForObject(sql, new Object[] { emailId }, new ProfileRowMapper());
+		} catch (EmptyResultDataAccessException e) {
+			return null;
+		}
+		return p;
+	}
+
 }

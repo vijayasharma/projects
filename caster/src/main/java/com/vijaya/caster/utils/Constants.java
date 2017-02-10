@@ -22,6 +22,7 @@ public interface Constants {
 	
 	// views
 	String VIEW_USER_HOME = "user.home";
+	String VIEW_USER_PROFILE = "user.profile";
 	String VIEW_USER_PROFILE_UPDATE_FORM = "user.profile.update.form";
 	
 }

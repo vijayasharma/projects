@@ -3,6 +3,8 @@ package com.vijaya.caster.web;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -38,13 +40,45 @@ public class ProfileController {
 		return mav;
 	}
 	
+	
+	@RequestMapping(value = "/profile", method = RequestMethod.GET)
+	public ModelAndView showUserProfile(Model model){
+		
+		logger.info("Inside showUserProfile method.");
+
+		ModelAndView mav = new ModelAndView();
+		
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+	    String emailId = auth.getName(); //get logged in username
+	    logger.info("Fetching profile for EmailId = {}", emailId);
+	    
+		Profile p = this.profileService.getProfileByEmail(emailId);
+		
+		if(p != null){
+			mav.addObject("p",p);
+			mav.setViewName(Constants.VIEW_USER_PROFILE);
+		}else{
+			mav.setViewName(Constants.VIEW_USER_HOME);
+		}
+		
+		
+		return mav;
+		
+	}
+	
+	
 	@RequestMapping(value = "/profile/edit", method = RequestMethod.GET)
 	public ModelAndView showUserProfileEditForm(Model model){
 		
 		logger.info("Inside showUserProfileEditForm method.");
 
 		ModelAndView mav = new ModelAndView();
-		Profile p = this.profileService.getProfileById(2L);
+		
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+	    String emailId = auth.getName(); //get logged in username
+	    logger.info("Fetching profile for EmailId = {}", emailId);
+	    
+		Profile p = this.profileService.getProfileByEmail(emailId);
 		
 		if(p != null){
 			mav.addObject("p",p);
