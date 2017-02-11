@@ -18,8 +18,10 @@ AUTHORITY VARCHAR(10) NOT NULL,
 FOREIGN KEY (USERNAME) REFERENCES USERS(USERNAME) 
 );
 
+DROP TABLE CASTER_ENUMS;
+
 CREATE TABLE CASTER_ENUMS (
-	ENUM_ID INT NOT NULL,
+	ENUM_ID INT NOT NULL PRIMARY KEY,
     ENUM_GROUP VARCHAR(150) NOT NULL,
     ENUM_VALUE VARCHAR(200)
 );
@@ -49,16 +51,32 @@ insert into caster_enums values (28,'HEIGHT','5ft 10in');
 insert into caster_enums values (29,'HEIGHT','5ft 11in');
 insert into caster_enums values (30,'HEIGHT','5ft 12in');
 insert into caster_enums values (31,'HEIGHT','6ft');
-insert into caster_enums values (31,'HEIGHT','6ft 1in');
-insert into caster_enums values (32,'HEIGHT','6ft 2in');
-insert into caster_enums values (33,'HEIGHT','6ft 3in');
-insert into caster_enums values (34,'HEIGHT','6ft 4in');
-insert into caster_enums values (35,'HEIGHT','6ft 5in');
-insert into caster_enums values (35,'HEIGHT','6ft 6in');
+insert into caster_enums values (32,'HEIGHT','6ft 1in');
+insert into caster_enums values (33,'HEIGHT','6ft 2in');
+insert into caster_enums values (34,'HEIGHT','6ft 3in');
+insert into caster_enums values (35,'HEIGHT','6ft 4in');
+insert into caster_enums values (36,'HEIGHT','6ft 5in');
+insert into caster_enums values (37,'HEIGHT','6ft 6in');
 insert into caster_enums values (50,'BODY_TYPE','Slim');
 insert into caster_enums values (51,'BODY_TYPE','Average');
 insert into caster_enums values (52,'BODY_TYPE','Athletic');
 insert into caster_enums values (53,'BODY_TYPE','Heavy');
+
+insert into caster_enums values (61,'SKIN_TONE','Very Fair');
+insert into caster_enums values (62,'SKIN_TONE','Fair');
+insert into caster_enums values (63,'SKIN_TONE','Wheatish');
+insert into caster_enums values (64,'SKIN_TONE','Dark');
+
+
+insert into caster_enums values (71,'BLOOD_GROUP','-- Don\'t know --');
+insert into caster_enums values (72,'BLOOD_GROUP','A+');
+insert into caster_enums values (73,'BLOOD_GROUP','A-');
+insert into caster_enums values (74,'BLOOD_GROUP','B+');
+insert into caster_enums values (75,'BLOOD_GROUP','B-');
+insert into caster_enums values (76,'BLOOD_GROUP','AB+');
+insert into caster_enums values (77,'BLOOD_GROUP','AB-');
+insert into caster_enums values (78,'BLOOD_GROUP','O+');
+insert into caster_enums values (79,'BLOOD_GROUP','O-');
 
 
 INSERT INTO USERS (USERNAME, PASSWORD, ENABLED) VALUES (?,?,?);

@@ -110,6 +110,108 @@
 				</div>
 			</div>
 		</spring:bind>
+		
+		<spring:bind path="height">
+			<div class="form-group ${status.error ? 'has-error' : ''}">
+				<div class="col-sm-3">
+					<form:label path="height" cssClass="control-label">Height</form:label>
+				</div>
+				<div class="col-sm-5">
+					<form:select path="height" class="btn btn-default btn-sm dropdown-toggle">
+						<c:forEach var="m" items="${heightList}" >
+							<option id="${m.enumValue}" value="${m.enumValue}" <c:if test="${m.enumValue eq p.height}">selected='selected'</c:if> > ${m.enumValue}</option>
+						</c:forEach>
+					</form:select>
+				</div>
+				<div class="col-sm-4">
+					<form:errors path="height" cssClass="text-danger text-left" />
+				</div>
+			</div>
+		</spring:bind>
+		
+		<spring:bind path="bodyType">
+			<div class="form-group ${status.error ? 'has-error' : ''}">
+				<div class="col-sm-3">
+					<form:label path="bodyType" cssClass="control-label">Body Type</form:label>
+				</div>
+				<div class="col-sm-5">
+					<form:select path="bodyType" class="btn btn-default btn-sm dropdown-toggle">
+						<c:forEach var="m" items="${bodyTypeList}" >
+							<option id="${m.enumValue}" value="${m.enumValue}" <c:if test="${m.enumValue eq p.bodyType}">selected='selected'</c:if> > ${m.enumValue}</option>
+						</c:forEach>
+					</form:select>
+				</div>
+				<div class="col-sm-4">
+					<form:errors path="bodyType" cssClass="text-danger text-left" />
+				</div>
+			</div>
+		</spring:bind>
+		
+		<spring:bind path="weight">		
+			<div class="form-group ${status.error ? 'has-error' : ''}">
+				<div class="col-sm-3">
+					<form:label path="weight" cssClass="control-label">Weight (Kg)</form:label>
+				</div>
+				<div class="col-sm-6">
+					<form:input path="weight" value="${weight}" cssClass="form-control" placeholder="e.g. 65" maxlength="3" />
+				</div>
+				<div class="col-sm-4">
+					<form:errors path="weight" cssClass="text-danger text-left" />
+				</div>
+			</div>
+		</spring:bind>
+		
+		<spring:bind path="healthInformation">		
+			<div class="form-group ${status.error ? 'has-error' : ''}">
+				<div class="col-sm-3">
+					<form:label path="healthInformation" cssClass="control-label">Health Information</form:label>
+				</div>
+				<div class="col-sm-6">
+					<form:textarea path="healthInformation" value="${healthInformation}" cssClass="form-control" placeholder="Any medical problems etc.." maxlength="100" />
+				</div>
+				<div class="col-sm-4">
+					<form:errors path="healthInformation" cssClass="text-danger text-left" />
+				</div>
+			</div>
+		</spring:bind>		
+
+		<spring:bind path="skinTone">		
+			<div class="form-group ${status.error ? 'has-error' : ''}">
+				<div class="col-sm-3">
+					<form:label path="skinTone" cssClass="control-label">Skin Tone</form:label>
+				</div>
+				<div class="col-sm-6">
+					<div class="radio">
+						<c:forEach var="st" items="${skinToneList}">
+							<label> <input type="radio" name="skinTone" id="skinTone" value="${st.enumValue}" />${st.enumValue} &nbsp;
+							</label>
+						</c:forEach>
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<form:errors path="skinTone" cssClass="text-danger text-left" />
+				</div>
+			</div>
+		</spring:bind>	
+
+		<spring:bind path="bloodGroup">
+			<div class="form-group ${status.error ? 'has-error' : ''}">
+				<div class="col-sm-3">
+					<form:label path="bloodGroup" cssClass="control-label">Blood Group</form:label>
+				</div>
+				<div class="col-sm-5">
+					<form:select path="bloodGroup" class="btn btn-default btn-sm dropdown-toggle">
+						<c:forEach var="m" items="${bloodGroupList}" >
+							<option id="${m.enumValue}" value="${m.enumValue}" <c:if test="${m.enumValue eq p.bodyType}">selected='selected'</c:if> > ${m.enumValue}</option>
+						</c:forEach>
+					</form:select>
+				</div>
+				<div class="col-sm-4">
+					<form:errors path="bloodGroup" cssClass="text-danger text-left" />
+				</div>
+			</div>
+		</spring:bind>
+		
 		<div class="form-group">
 			<div class="col-sm-3"></div>
 			<div class="col-sm-9">

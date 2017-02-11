@@ -30,5 +30,7 @@ public interface Constants {
 	String ENUM_MARITAL_STATUS = "MARITAL_STATUS";
 	String ENUM_HEIGHT = "HEIGHT";
 	String ENUM_BODY_TYPE = "BODY_TYPE";
+	String ENUM_SKIN_TONE = "SKIN_TONE";
+	String ENUM_BLOOD_GROUP = "BLOOD_GROUP";
 	
 }

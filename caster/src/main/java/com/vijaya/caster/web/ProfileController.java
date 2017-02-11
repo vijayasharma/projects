@@ -83,7 +83,10 @@ public class ProfileController {
 		if(p != null){
 			mav.addObject("p",p);
 			mav.addObject("maritalStatusList", this.profileService.getEnumsByGroup(Constants.ENUM_MARITAL_STATUS));
-			
+			mav.addObject("heightList", this.profileService.getEnumsByGroup(Constants.ENUM_HEIGHT));
+			mav.addObject("bodyTypeList", this.profileService.getEnumsByGroup(Constants.ENUM_BODY_TYPE));
+			mav.addObject("skinToneList", this.profileService.getEnumsByGroup(Constants.ENUM_SKIN_TONE));
+			mav.addObject("bloodGroupList", this.profileService.getEnumsByGroup(Constants.ENUM_BLOOD_GROUP));
 			mav.setViewName(Constants.VIEW_USER_PROFILE_UPDATE_FORM);
 		}else{
 			mav.setViewName(Constants.VIEW_USER_HOME);
