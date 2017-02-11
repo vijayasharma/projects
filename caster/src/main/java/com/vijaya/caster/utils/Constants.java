@@ -32,5 +32,6 @@ public interface Constants {
 	String ENUM_BODY_TYPE = "BODY_TYPE";
 	String ENUM_SKIN_TONE = "SKIN_TONE";
 	String ENUM_BLOOD_GROUP = "BLOOD_GROUP";
+	String ENUM_RELIGION = "RELIGION";
 	
 }

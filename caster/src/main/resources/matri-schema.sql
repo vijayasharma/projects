@@ -78,6 +78,17 @@ insert into caster_enums values (77,'BLOOD_GROUP','AB-');
 insert into caster_enums values (78,'BLOOD_GROUP','O+');
 insert into caster_enums values (79,'BLOOD_GROUP','O-');
 
+insert into caster_enums values (91,'RELIGION','Hindu');
+insert into caster_enums values (92,'RELIGION','Muslim');
+insert into caster_enums values (93,'RELIGION','Christian');
+insert into caster_enums values (94,'RELIGION','Sikh');
+insert into caster_enums values (95,'RELIGION','Parsi');
+insert into caster_enums values (96,'RELIGION','Jain');
+insert into caster_enums values (97,'RELIGION','Buddhist');
+insert into caster_enums values (98,'RELIGION','Jewish');
+insert into caster_enums values (99,'RELIGION','No Religion');
+insert into caster_enums values (100,'RELIGION','Spiritual');
+insert into caster_enums values (101,'RELIGION','Other');
 
 INSERT INTO USERS (USERNAME, PASSWORD, ENABLED) VALUES (?,?,?);
 insert into users(username, password,enabled) values('bharat','pass',1);
@@ -95,14 +106,23 @@ create table PROFILES(
     LAST_NAME VARCHAR(100),
     DATE_OF_BIRTH DATETIME,
     GENDER VARCHAR(6),
+    MARITAL_STATUS VARCHAR(20),
     EMAIL VARCHAR(150),
+    HEIGHT VARCHAR(10),
+    BODY_TYPE VARCHAR(20),
+    WEIGHT VARCHAR(10),
+    HEALTH_INFORMATION VARCHAR(200),
+    SKIN_TONE VARCHAR(20),
+    DISABILITY VARCHAR(20),
+    BLOOD_GROUP VARCHAR(10),
+    RELIGION VARCHAR(150),
+    MOTHER_TONGUE VARCHAR(150),
+    COMMUNITY VARCHAR(150),
+    SUB_COMMUNITY VARCHAR(150),
+    GOTRA VARCHAR(150),
     PHONE VARCHAR(10),
     ALTERNATE_PHONE VARCHAR(10),
-    MARITAL_STATUS VARCHAR(20),
-	HAVE_CHILDREN VARCHAR(50),
-    MOTHER_TONGUE VARCHAR(100),
-    RELIGION VARCHAR(100),
-    CASTE VARCHAR(100),
+    -- AUDIT FIELDS
     IS_DELETED VARCHAR(1),
     CREATED_DATE DATETIME,
     UPDATED_DATE DATETIME

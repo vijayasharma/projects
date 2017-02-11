@@ -47,6 +47,12 @@ public class ProfileService {
 	}
 	
 	@Transactional
+	public int updateProfile(Profile profile){
+		return profileDao.updateProfile(profile);
+	}
+	
+	
+	@Transactional
 	public List<CasterEnum> getEnumsByGroup(String enumGroup){
 		return this.enumDao.getEnumsByGroup(enumGroup);
 	}
