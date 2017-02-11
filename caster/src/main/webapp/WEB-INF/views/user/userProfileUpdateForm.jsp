@@ -317,9 +317,4 @@
 		</div>
 	</form:form>
 	
-	${p}
-	<hr/>
-	${maritalStatusList }
-	
-	
 </div>

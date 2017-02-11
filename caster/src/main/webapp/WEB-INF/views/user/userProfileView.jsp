@@ -113,6 +113,57 @@
   			</div>
 		</div>
 		
+		<%-- Religious Background --%>
+		<div class="panel panel-default">
+  			<div class="panel-heading text-left">Religious Background <a href='<c:url value="/user/profile/edit"/>' class="btn btn-xs btn-primary pull-right">Edit Profile</a></div>
+  			<div class="panel-body">
+
+				<div class="row">
+					<div class="col-sm-4">
+						<label class="control-label">Religion</label>
+					</div>
+					<div class="col-sm-8">
+						${p.religion}
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-4">
+						<label class="control-label">Mother Tongue</label>
+					</div>
+					<div class="col-sm-8">
+						${p.motherTongue}
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-4">
+						<label class="control-label">Community</label>
+					</div>
+					<div class="col-sm-8">
+						${p.community}
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-4">
+						<label class="control-label">Sub Community</label>
+					</div>
+					<div class="col-sm-8">
+						${p.subCommunity}
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-4">
+						<label class="control-label">Gotra</label>
+					</div>
+					<div class="col-sm-8">
+						${p.gotra}
+					</div>
+				</div>
+								
+  			</div> <!-- Panel body ends -->
+  			<div class="panel-footer text-right">
+  				<a href='<c:url value="/user/profile/edit"/>' class="btn btn-xs btn-primary">Edit Profile</a>
+  			</div>
+		</div>
 		
 		
 	</div> <!-- Container ends -->
