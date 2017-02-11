@@ -138,8 +138,9 @@ public class ProfileDaoImpl implements ProfileDao {
 	@Override
 	public Profile getProfileByEmail(String emailId) {
 		logger.info("Inside Dao getProfileByEmail method. emailId={}", emailId);
-		String sql = "SELECT PROFILE_ID, FIRST_NAME, LAST_NAME, DATE_OF_BIRTH,"
-				+ " GENDER,EMAIL, PHONE, ALTERNATE_PHONE, MARITAL_STATUS from PROFILES WHERE EMAIL=?";
+		String sql = "SELECT PROFILE_ID, FIRST_NAME, LAST_NAME, DATE_OF_BIRTH, MARITAL_STATUS,HEIGHT,BODY_TYPE,"
+				+ "WEIGHT,HEALTH_INFORMATION,SKIN_TONE,DISABILITY,BLOOD_GROUP,RELIGION,MOTHER_TONGUE,"
+				+ "COMMUNITY,SUB_COMMUNITY,GOTRA, GENDER,EMAIL, PHONE, ALTERNATE_PHONE from PROFILES WHERE EMAIL=?";
 		Profile p = null;
 		try {
 			p = this.jdbcTemplate.queryForObject(sql, new Object[] { emailId }, new ProfileRowMapper());

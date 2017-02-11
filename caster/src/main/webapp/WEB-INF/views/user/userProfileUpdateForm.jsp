@@ -100,7 +100,7 @@
 			<spring:bind path="alternatePhone">		
 				<div class="form-group ${status.error ? 'has-error' : ''}">
 					<div class="col-sm-3">
-						<form:label path="alternatePhone" cssClass="control-label">Aleternate Mobile Number</form:label>
+						<form:label path="alternatePhone" cssClass="control-label">Alternate Mobile Number</form:label>
 					</div>
 					<div class="col-sm-6">
 						<form:input path="alternatePhone" value="${alternatePhone}" cssClass="form-control" placeholder="10 digit Mobile Number" maxlength="10" />

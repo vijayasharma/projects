@@ -17,11 +17,23 @@ public class ProfileRowMapper implements RowMapper<Profile>{
 		p.setFirstName(rs.getString("FIRST_NAME"));
 		p.setLastName(rs.getString("LAST_NAME"));
 		p.setDateOfBirth(rs.getDate("DATE_OF_BIRTH"));
+		p.setMaritalStatus(rs.getString("MARITAL_STATUS"));
+		p.setHeight(rs.getString("HEIGHT"));
+		p.setBodyType(rs.getString("BODY_TYPE"));
+		p.setWeight(rs.getString("WEIGHT"));
+		p.setHealthInformation(rs.getString("HEALTH_INFORMATION"));
+		p.setSkinTone(rs.getString("SKIN_TONE"));
+		p.setDisablility(rs.getString("DISABILITY"));
+		p.setBloodGroup(rs.getString("BLOOD_GROUP"));
+		p.setReligion(rs.getString("RELIGION"));
+		p.setMotherTongue(rs.getString("MOTHER_TONGUE"));
+		p.setCommunity(rs.getString("COMMUNITY"));
+		p.setSubCommunity(rs.getString("SUB_COMMUNITY"));
+		p.setGotra(rs.getString("GOTRA"));
 		p.setGender(rs.getString("GENDER"));
 		p.setEmail(rs.getString("EMAIL"));
 		p.setPhone(rs.getString("PHONE"));
 		p.setAlternatePhone(rs.getString("ALTERNATE_PHONE"));
-		p.setMaritalStatus(rs.getString("MARITAL_STATUS"));
 		
 		return p;
 	}
