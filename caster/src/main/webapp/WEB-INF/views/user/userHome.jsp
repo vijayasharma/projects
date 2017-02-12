@@ -9,5 +9,7 @@
 
 <div class="container-fluid">
 User profile page.
-	<caster:profileShort profile="${p}"></caster:profileShort>
+	<c:forEach items="${profiles}" var="p">
+		<caster:profileShort profile="${p}" />
+	</c:forEach>
 </div>

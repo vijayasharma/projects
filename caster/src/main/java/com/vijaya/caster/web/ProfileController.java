@@ -1,7 +1,9 @@
 package com.vijaya.caster.web;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -135,9 +137,12 @@ public class ProfileController {
 	public ModelAndView showUserHome(Model model) {
 
 		logger.info("Inside showUserHome method.");
-
 		ModelAndView mav = new ModelAndView();
 
+		List<Profile> profiles = new ArrayList<>();
+		profiles.add(this.profileService.getProfileById(1L));
+		profiles.add(this.profileService.getProfileById(2L));
+		mav.addObject("profiles", profiles);
 		mav.setViewName("user.home");
 
 		return mav;

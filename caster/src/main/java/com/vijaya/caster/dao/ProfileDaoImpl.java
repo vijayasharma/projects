@@ -74,15 +74,19 @@ public class ProfileDaoImpl implements ProfileDao {
 	
 	@Override
 	public Profile getProfileById(Long profileId) {
-		logger.info("Inside Dao getProfileById method");
-		String sql = "SELECT PROFILE_ID, FIRST_NAME, LAST_NAME, DATE_OF_BIRTH,"
-				+ " GENDER, EMAIL, PHONE, ALTERNATE_PHONE from PROFILES WHERE PROFILE_ID=?";
+		
+		String sql = "SELECT PROFILE_ID, FIRST_NAME, LAST_NAME, DATE_OF_BIRTH, MARITAL_STATUS,HEIGHT,BODY_TYPE,"
+				+ "WEIGHT,HEALTH_INFORMATION,SKIN_TONE,DISABILITY,BLOOD_GROUP,RELIGION,MOTHER_TONGUE,"
+				+ "COMMUNITY,SUB_COMMUNITY,GOTRA, GENDER,EMAIL, PHONE, ALTERNATE_PHONE from PROFILES WHERE PROFILE_ID=?";
 		Profile p = null;
 		try {
 			p = this.jdbcTemplate.queryForObject(sql, new Object[] { profileId }, new ProfileRowMapper());
 		} catch (EmptyResultDataAccessException e) {
 			return null;
 		}
+		
+		logger.info("Inside Dao getProfileById method. Returning {}", p);
+		
 		return p;
 	}
 
