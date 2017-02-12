@@ -126,7 +126,7 @@ public class ProfileController {
 			logger.info("user saved successfully. Username = {}", user.getUserName());
 			// and save authority
 			Authority authority = new Authority();
-			authority.setUsername(profile.getUsername());
+			authority.setUsername(profile.getEmail());
 			authority.setAuthority(Constants.AUTHORITY_ROLE_USER);
 			int authorityCount = this.profileService.createAuthority(authority);
 
@@ -167,7 +167,12 @@ public class ProfileController {
 		if (p != null) {
 			mav.addObject("p", p);
 			mav.setViewName(Constants.VIEW_USER_PROFILE);
-		} else {
+		} else if (p == null){
+			// this means profile not found in PROFILE table.
+			mav.addObject("p", p);
+			mav.addObject(Constants.ERROR_MESSAGE, "Profile not found. Please contact support.");
+			mav.setViewName(Constants.VIEW_USER_PROFILE);
+		}else{
 			mav.setViewName(Constants.VIEW_USER_HOME);
 		}
 

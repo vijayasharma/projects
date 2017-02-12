@@ -38,4 +38,6 @@ public interface Constants {
 	String AUTHORITY_ROLE_USER = "ROLE_USER";
 	String AUTHORITY_ROLE_ADMIN = "ROLE_ADMIN";
 	
+	//
+	String ERROR_MESSAGE = "errorMessage";
 }
