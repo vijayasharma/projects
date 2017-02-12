@@ -130,10 +130,14 @@ create table PROFILES(
 
 insert into users(username, password,enabled) values('ibharatsharma@gmail.com','1234',1);
 insert into authorities(username,authority) values('ibharatsharma@gmail.com','ROLE_ADMIN');
-insert into authorities(username,authority) values('ibharatsharma@gmail.com','ROLE_USER');
+insert into authorities(username,authority) values('vijayatidke@gmail.com','ROLE_USER');
 
 select * from users;
 select * from authorities;
 select * from PROFILES;
 select * from CASTER_ENUMS order by enum_id, enum_group;
-select enum_id, enum_group, enum_value from caster_enums where enum_group='HEIGHT' order by enum_id, enum_group
+select enum_id, enum_group, enum_value from caster_enums where enum_group='HEIGHT' order by enum_id, enum_group;
+
+SELECT PROFILE_ID, FIRST_NAME, LAST_NAME, DATE_OF_BIRTH,MARITAL_STATUS,HEIGHT,BODY_TYPE,
+				WEIGHT,HEALTH_INFORMATION,SKIN_TONE,DISABILITY,BLOOD_GROUP,RELIGION,MOTHER_TONGUE,
+				COMMUNITY,SUB_COMMUNITY,GOTRA, GENDER,EMAIL, PHONE, ALTERNATE_PHONE, MARITAL_STATUS from PROFILES

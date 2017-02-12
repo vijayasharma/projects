@@ -25,7 +25,6 @@ import com.vijaya.caster.domain.Authority;
 import com.vijaya.caster.domain.Profile;
 import com.vijaya.caster.domain.User;
 import com.vijaya.caster.services.ProfileService;
-import com.vijaya.caster.services.RegistrationService;
 import com.vijaya.caster.utils.Constants;
 import com.vijaya.caster.web.validators.PasswordValidator;
 import com.vijaya.caster.web.validators.ProfileValidator;
@@ -45,9 +44,6 @@ public class ProfileController {
 	@Autowired
 	private PasswordValidator passwordValidator;
 
-	@Autowired
-	private RegistrationService registrationService;
-
 	public void setProfileService(ProfileService profileService) {
 		this.profileService = profileService;
 	}
@@ -58,10 +54,6 @@ public class ProfileController {
 
 	public void setPasswordValidator(PasswordValidator passwordValidator) {
 		this.passwordValidator = passwordValidator;
-	}
-
-	public void setRegistrationService(RegistrationService registrationService) {
-		this.registrationService = registrationService;
 	}
 
 	@InitBinder
@@ -129,10 +121,10 @@ public class ProfileController {
 			authority.setUsername(profile.getEmail());
 			authority.setAuthority(Constants.AUTHORITY_ROLE_USER);
 			int authorityCount = this.profileService.createAuthority(authority);
-
+			
 			if(authorityCount == 1){
 				logger.info("Authority Saved successfully. {}", authority);
-				Long profileId = registrationService.saveProfile(profile);
+				Long profileId = profileService.saveProfileForRegistration(profile);
 				logger.info("Profile saved succesfully. ProfileId={}", profileId);
 			}
 		}
@@ -172,8 +164,6 @@ public class ProfileController {
 			mav.addObject("p", p);
 			mav.addObject(Constants.ERROR_MESSAGE, "Profile not found. Please contact support.");
 			mav.setViewName(Constants.VIEW_USER_PROFILE);
-		}else{
-			mav.setViewName(Constants.VIEW_USER_HOME);
 		}
 
 		return mav;

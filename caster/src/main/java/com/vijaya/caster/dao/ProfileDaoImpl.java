@@ -8,6 +8,7 @@ import java.sql.Statement;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
@@ -37,6 +38,8 @@ public class ProfileDaoImpl implements ProfileDao {
 		String sql = "insert into profiles (first_name, last_name, date_Of_Birth, gender, email, PHONE, ALTERNATE_PHONE) "
 				+ "values(?,?,?,?,?,?,?)";
 
+		try{
+		
 		this.jdbcTemplate.update(new PreparedStatementCreator() {
 
 			@Override
@@ -60,6 +63,11 @@ public class ProfileDaoImpl implements ProfileDao {
 			}
 		}, generatedKeyHolder);
 
+		}catch(DataAccessException dae){
+			logger.error("Exception while saving new profile.", dae);
+			return -1L;
+		}
+		
 		logger.info("profile crated with profileId={}", generatedKeyHolder.getKey().longValue());
 		return generatedKeyHolder.getKey().longValue();
 	}

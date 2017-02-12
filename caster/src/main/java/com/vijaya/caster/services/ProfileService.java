@@ -26,15 +26,15 @@ public class ProfileService {
 	private EnumDao enumDao;
 	@Autowired
 	private AuthorityDao authorityDao;
-	
+
 	public void setProfileDao(ProfileDao profileDao) {
 		this.profileDao = profileDao;
 	}
-	
+
 	public void setUserDao(UserDao userDao) {
 		this.userDao = userDao;
 	}
-	
+
 	public void setEnumDao(EnumDao enumDao) {
 		this.enumDao = enumDao;
 	}
@@ -42,36 +42,44 @@ public class ProfileService {
 	public void setAuthorityDao(AuthorityDao authorityDao) {
 		this.authorityDao = authorityDao;
 	}
-	
-	@Transactional
-	public Profile getProfileById(Long profileId){
 
-		return profileDao.getProfileById(profileId) ;
-	}
-	
 	@Transactional
-	public Profile getProfileByEmail(String emailId){
+	public Profile getProfileById(Long profileId) {
 
-		return profileDao.getProfileByEmail(emailId) ;
+		return profileDao.getProfileById(profileId);
 	}
-	
+
 	@Transactional
-	public int updateProfile(Profile profile){
+	public Profile getProfileByEmail(String emailId) {
+
+		return profileDao.getProfileByEmail(emailId);
+	}
+
+	@Transactional
+	public int updateProfile(Profile profile) {
 		return profileDao.updateProfile(profile);
 	}
-	
+
 	@Transactional
-	public List<CasterEnum> getEnumsByGroup(String enumGroup){
+	public List<CasterEnum> getEnumsByGroup(String enumGroup) {
 		return this.enumDao.getEnumsByGroup(enumGroup);
 	}
-	
+
 	@Transactional
-	public int saveUser(User user){
+	public int saveUser(User user) {
 		return this.userDao.saveUser(user);
 	}
-	
+
 	@Transactional
-	public int createAuthority(Authority authority){
+	public int createAuthority(Authority authority) {
 		return authorityDao.createAuthority(authority);
+	}
+
+	@Transactional
+	public Long saveProfileForRegistration(Profile profile) {
+
+		Long profileReturnStatus = 0L;
+		profileReturnStatus = profileDao.saveProfile(profile);
+		return profileReturnStatus;
 	}
 }
