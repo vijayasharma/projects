@@ -5,9 +5,9 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-
+<%@ taglib prefix="caster" uri="http://caster.com/jsp/tlds/caster-tags" %>
 
 <div class="container-fluid">
 User profile page.
-
+	<caster:profileShort profile="${p}"></caster:profileShort>
 </div>

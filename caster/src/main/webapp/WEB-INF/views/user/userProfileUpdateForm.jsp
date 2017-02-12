@@ -221,7 +221,7 @@
 					<div class="col-sm-5">
 						<form:select path="bloodGroup" class="btn btn-default btn-sm dropdown-toggle">
 							<c:forEach var="m" items="${bloodGroupList}" >
-								<option id="${m.enumValue}" value="${m.enumValue}" <c:if test="${m.enumValue eq p.bodyType}">selected='selected'</c:if> > ${m.enumValue}</option>
+								<option id="${m.enumValue}" value="${m.enumValue}" <c:if test="${m.enumValue eq p.bloodGroup}">selected='selected'</c:if> > ${m.enumValue}</option>
 							</c:forEach>
 						</form:select>
 					</div>
