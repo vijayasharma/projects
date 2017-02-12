@@ -34,4 +34,8 @@ public interface Constants {
 	String ENUM_BLOOD_GROUP = "BLOOD_GROUP";
 	String ENUM_RELIGION = "RELIGION";
 	
+	// authorities
+	String AUTHORITY_ROLE_USER = "ROLE_USER";
+	String AUTHORITY_ROLE_ADMIN = "ROLE_ADMIN";
+	
 }

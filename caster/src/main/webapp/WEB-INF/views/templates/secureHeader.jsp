@@ -8,7 +8,7 @@
 <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 
 
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">

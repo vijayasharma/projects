@@ -53,7 +53,7 @@
 				</div>
 
 
-				<a href='<spring:url value="/register" />' class="btn btn-primary">New
+				<a href='<spring:url value="/user/register" />' class="btn btn-primary">New
 					User Registration</a>
 			</div>
 		</div>

@@ -34,7 +34,7 @@ public class RegistrationController {
 	private ProfileValidator profileValidator;
 	
 	@Autowired
-	private PasswordValidator passwordValidator; 
+	private PasswordValidator passwordValidator;
 
 	@Autowired
 	private RegistrationService registrationService;
@@ -71,7 +71,7 @@ public class RegistrationController {
 		return "error";
 	}
 
-	@RequestMapping(value = "/register", method = RequestMethod.GET)
+	//@RequestMapping(value = "/register", method = RequestMethod.GET)
 	public ModelAndView showRegistrationForm(Model model) {
 		logger.info("Inside showRegistrationForm method.");
 		ModelAndView mav = new ModelAndView();
@@ -83,7 +83,7 @@ public class RegistrationController {
 		return mav;
 	}
 
-	@RequestMapping(value = "/register", method = RequestMethod.POST)
+	//@RequestMapping(value = "/register", method = RequestMethod.POST)
 	public String processRegistrationForm(@ModelAttribute("profile") Profile profile, BindingResult result, ModelMap model) {
 
 		logger.info("New Profile to be saved: {}", profile);
