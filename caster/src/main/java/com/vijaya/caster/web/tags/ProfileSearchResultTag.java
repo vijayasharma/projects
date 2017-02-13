@@ -30,7 +30,7 @@ public class ProfileSearchResultTag extends TagSupport{
 	
 	@Override
 	public int doStartTag() throws JspException {
-		logger.info("-------------doStartTag");
+		// logger.info("-------------doStartTag");
 		JspWriter out = pageContext.getOut();
 		String contextPath = pageContext.getServletContext().getContextPath();
 		// InputStream in = pageContext.getServletContext().getClassLoader().getResourceAsStream("WEB-INF/views/user/profileSearchResultTagBody.jsp");

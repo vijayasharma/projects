@@ -90,6 +90,28 @@ insert into caster_enums values (99,'RELIGION','No Religion');
 insert into caster_enums values (100,'RELIGION','Spiritual');
 insert into caster_enums values (101,'RELIGION','Other');
 
+insert into caster_enums values (301,'INCOME','Rs. 0 Lakh');
+insert into caster_enums values (302,'INCOME','Rs. 1 Lakh');
+insert into caster_enums values (303,'INCOME','Rs. 2 Lakh');
+insert into caster_enums values (304,'INCOME','Rs. 3 Lakh');
+insert into caster_enums values (305,'INCOME','Rs. 4 Lakh');
+insert into caster_enums values (306,'INCOME','Rs. 5 Lakh');
+insert into caster_enums values (307,'INCOME','Rs. 6 Lakh');
+insert into caster_enums values (308,'INCOME','Rs. 7 Lakh');
+insert into caster_enums values (309,'INCOME','Rs. 8 Lakh');
+insert into caster_enums values (310,'INCOME','Rs. 9 Lakh');
+insert into caster_enums values (311,'INCOME','Rs. 10 Lakh');
+insert into caster_enums values (312,'INCOME','Rs. 15 Lakh');
+insert into caster_enums values (313,'INCOME','Rs. 20 Lakh');
+insert into caster_enums values (314,'INCOME','Rs. 25 Lakh');
+insert into caster_enums values (315,'INCOME','Rs. 30 Lakh');
+insert into caster_enums values (316,'INCOME','Rs. 35 Lakh');
+insert into caster_enums values (317,'INCOME','Rs. 40 Lakh');
+insert into caster_enums values (318,'INCOME','Rs. 50 Lakh');
+insert into caster_enums values (319,'INCOME','Rs. 70 Lakh');
+insert into caster_enums values (320,'INCOME','Rs. 1 Crore');
+
+
 INSERT INTO USERS (USERNAME, PASSWORD, ENABLED) VALUES (?,?,?);
 insert into users(username, password,enabled) values('bharat','pass',1);
 insert into authorities(username,authority) values('bharat','ROLE_ADMIN');

@@ -82,4 +82,9 @@ public class ProfileService {
 		profileReturnStatus = profileDao.saveProfile(profile);
 		return profileReturnStatus;
 	}
+	
+	
+	public List<Profile> getProfilesBySearchCriteria(){
+		return null;
+	}
 }
