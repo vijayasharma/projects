@@ -141,7 +141,7 @@ public class ProfileController {
 
 		List<Profile> profiles = new ArrayList<>();
 		profiles.add(this.profileService.getProfileById(1L));
-		profiles.add(this.profileService.getProfileById(2L));
+		//profiles.add(this.profileService.getProfileById(2L));
 		mav.addObject("profiles", profiles);
 		mav.setViewName("user.home");
 

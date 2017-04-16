@@ -21,6 +21,7 @@ public class ProfileSearchResultTag extends TagSupport{
 	private Profile profile;
 	
 	public void setProfile(Profile profile) {
+		logger.info("Inside tag : profile={}",profile);
 		this.profile = profile;
 	}
 
@@ -44,10 +45,10 @@ public class ProfileSearchResultTag extends TagSupport{
 		sb.append("<div class=\"media-body\">");
 		sb.append("<h5 class=\"media-heading\">"+profile.getFirstName() +" "+ profile.getLastName()+"</h5>");
 		sb.append("<div class='row'>");
-		sb.append("<div class='col-sm-3'><strong>Age / Height</strong></div><div class='col-sm-9'>"+profile.getAge()+" , "+profile.getHeight()+"</div>");
-		sb.append("<div class='col-sm-3'><strong>Community</strong></div><div class='col-sm-9'>"+profile.getCommunity()+"</div>");
-		sb.append("<div class='col-sm-3'><strong>Sub Community</strong></div><div class='col-sm-9'>"+profile.getSubCommunity()+"</div>");
-		sb.append("<div class='col-sm-3'><strong>Mother Tongue</strong></div><div class='col-sm-9'>"+profile.getMotherTongue()+"</div>");
+		sb.append("<div class='col-sm-3'><strong>Age / Height</strong></div><div class='col-sm-9'>"+profile.getAge()+" , "+profile.getHeight()+"&nbsp;</div>");
+		sb.append("<div class='col-sm-3'><strong>Community</strong></div><div class='col-sm-9'>"+ profile.getCommunity() +"&nbsp;</div>");
+		sb.append("<div class='col-sm-3'><strong>Sub Community</strong></div><div class='col-sm-9'>"+profile.getSubCommunity()+"&nbsp;</div>");
+		sb.append("<div class='col-sm-3'><strong>Mother Tongue</strong></div><div class='col-sm-9'>"+profile.getMotherTongue()+"&nbsp;</div>");
 		sb.append("<div class='col-sm-3'><strong>Location</strong></div><div class='col-sm-9'>&nbsp;</div>");
 		sb.append("<div class='col-sm-3'><strong>Education</strong></div><div class='col-sm-9'>&nbsp;</div>");
 		sb.append("<div class='col-sm-3'><strong>Profession</strong></div><div class='col-sm-9'>&nbsp;</div>");

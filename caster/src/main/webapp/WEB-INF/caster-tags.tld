@@ -16,7 +16,7 @@
 		<attribute>
 			<name>profile</name>
 			<required>true</required>
-			 <rtexprvalue>true</rtexprvalue>
+			<rtexprvalue>true</rtexprvalue>
 		</attribute>
 	</tag>
 

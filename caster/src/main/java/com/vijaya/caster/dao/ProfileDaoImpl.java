@@ -118,9 +118,9 @@ public class ProfileDaoImpl implements ProfileDao {
 				ps.setString(4, profile.getGender());
 				ps.setString(5, profile.getMaritalStatus());
 				ps.setString(6, profile.getEmail());
-				ps.setString(7, profile.getHeight());
+				ps.setInt(7, profile.getHeight());
 				ps.setString(8, profile.getBodyType());
-				ps.setString(9, profile.getWeight());
+				ps.setInt(9, profile.getWeight());
 				ps.setString(10, profile.getHealthInformation());
 				ps.setString(11, profile.getSkinTone());
 				ps.setString(12, profile.getDisablility());

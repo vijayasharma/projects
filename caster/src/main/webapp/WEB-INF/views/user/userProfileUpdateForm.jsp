@@ -138,7 +138,7 @@
 					<div class="col-sm-5">
 						<form:select path="height" class="btn btn-default btn-sm dropdown-toggle">
 							<c:forEach var="m" items="${heightList}" >
-								<option id="${m.enumValue}" value="${m.enumValue}" <c:if test="${m.enumValue eq p.height}">selected='selected'</c:if> > ${m.enumValue}</option>
+								<option id="${m.enumId}" value="${m.enumId}" <c:if test="${m.enumId eq p.height}">selected='selected'</c:if> > ${m.enumValue}</option>
 							</c:forEach>
 						</form:select>
 					</div>

@@ -18,9 +18,9 @@ public class ProfileRowMapper implements RowMapper<Profile>{
 		p.setLastName(rs.getString("LAST_NAME"));
 		p.setDateOfBirth(rs.getDate("DATE_OF_BIRTH"));
 		p.setMaritalStatus(rs.getString("MARITAL_STATUS"));
-		p.setHeight(rs.getString("HEIGHT"));
+		p.setHeight(rs.getInt("HEIGHT"));
 		p.setBodyType(rs.getString("BODY_TYPE"));
-		p.setWeight(rs.getString("WEIGHT"));
+		p.setWeight(rs.getInt("WEIGHT"));
 		p.setHealthInformation(rs.getString("HEALTH_INFORMATION"));
 		p.setSkinTone(rs.getString("SKIN_TONE"));
 		p.setDisablility(rs.getString("DISABILITY"));

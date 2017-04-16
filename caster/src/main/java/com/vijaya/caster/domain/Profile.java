@@ -12,9 +12,9 @@ public class Profile {
 	private String gender;
 	private Date dateOfBirth;
 	private String maritalStatus;
-	private String height;
+	private int height;
 	private String bodyType;
-	private String weight;
+	private int weight;
 	private String healthInformation;
 	private String skinTone;
 	private String disablility;
@@ -104,11 +104,11 @@ public class Profile {
 		this.maritalStatus = maritalStatus;
 	}
 
-	public String getHeight() {
+	public int getHeight() {
 		return height;
 	}
 
-	public void setHeight(String height) {
+	public void setHeight(int height) {
 		this.height = height;
 	}
 
@@ -120,11 +120,11 @@ public class Profile {
 		this.bodyType = bodyType;
 	}
 
-	public String getWeight() {
+	public int getWeight() {
 		return weight;
 	}
 
-	public void setWeight(String weight) {
+	public void setWeight(int weight) {
 		this.weight = weight;
 	}
 
