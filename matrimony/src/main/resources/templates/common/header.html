@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<div xmlns:th="http://www.thymeleaf.org" th:fragment="header">
+
+	<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+	<link th:href="@{/css/matri.css}" rel="stylesheet" />
+
+	<div class="container" style="width: 60%;">
+		<nav class="navbar navbar-expand-sm  navbar-light text-center"	style="background-color: #e3f2fd;">
+			<!-- Brand -->
+			<a class="navbar-brand" href="#" th:href="@{/}">Matrimony</a>
+
+			<!-- Links -->
+			<ul class="navbar-nav">
+				<li class="nav-item"><a class="nav-link" href="#"
+					th:href="@{/patients/new}">New Patient</a></li>
+				<li class="nav-item"><a class="nav-link" href="#"
+					th:href="@{/patients/all}">All Patients</a></li>
+
+				<!-- Dropdown -->
+				<li class="nav-item dropdown"><a
+					class="nav-link dropdown-toggle" href="#" id="navbardrop"
+					data-toggle="dropdown"> Search </a>
+					<div class="dropdown-menu">
+						<a class="dropdown-item" href="#">Search</a>
+						<a class="dropdown-item" href="#">Search by Profile Id</a> 
+					</div></li>
+			</ul>
+		</nav>
+	</div>
+
+
+</div>
+

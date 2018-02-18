@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -160,6 +161,13 @@ public class ProfileDaoImpl implements ProfileDao {
 			return null;
 		}
 		return p;
+	}
+
+	@Override
+	public List<Profile> searchProfiles(String criteria) {
+		String sql = "select * from profiles";
+		List<Profile> profiles = this.jdbcTemplate.query(psc, rse)
+		return null;
 	}
 
 }

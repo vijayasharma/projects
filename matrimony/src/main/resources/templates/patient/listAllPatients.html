@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	layout:decorate="~{layouts/default.html}">
+<head>
+<meta charset="ISO-8859-1"></meta>
+<title>Insert title here</title>
+</head>
+<body>
+	<div layout:fragment="content">
+		<table>
+			<th>
+			<td>FirstName</td>
+			<td>LastName</td>
+			</th>
+			<th:block th:each="patient : ${patients}">
+				<tr>
+					<td th:text="${patient.firstName}">..</td>
+					<td th:text="${patient.lastName}">..</td>
+				</tr>
+			</th:block>
+		</table>
+	</div>
+</body>
+</html>
