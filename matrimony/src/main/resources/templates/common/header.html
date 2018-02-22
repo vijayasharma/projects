@@ -21,9 +21,20 @@
 					class="nav-link dropdown-toggle" href="#" id="navbardrop"
 					data-toggle="dropdown"> Search </a>
 					<div class="dropdown-menu">
-						<a class="dropdown-item" href="#">Search</a>
-						<a class="dropdown-item" href="#">Search by Profile Id</a> 
-					</div></li>
+						<a class="dropdown-item" href="#" th:href="@{/search/advanced}">Search</a>
+						<a class="dropdown-item" href="#" th:href="@{/search/id}">Search by Profile Id</a> 
+					</div>
+				</li>
+				
+				 <form class="form-inline my-2 my-lg-0">
+      				<input class="form-control mr-sm-2" type="search" placeholder="Profile Id" aria-label="Search">
+      				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    			</form>
+				
+				<li class="nav-item"><a class="nav-link" href="#"
+					th:href="@{/profile/registration}">REGISTER FREE</a>
+				</li>
+				
 			</ul>
 		</nav>
 	</div>

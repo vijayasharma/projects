@@ -2,11 +2,14 @@ package com.bharatonjava.matri.domain;
 
 import java.time.LocalDate;
 
-public class Person {
+import org.springframework.format.annotation.DateTimeFormat;
+
+public class Profile {
 
 	private String firstName;
 	private String middleName;
 	private String lastName;
+	private String password;
 	private LocalDate dob;
 	private String fatherName;
 	private String motherName;
@@ -36,9 +39,20 @@ public class Person {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
+	
+	public String getPassword() {
+		return password;
+	}
+	
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	
 	public LocalDate getDob() {
 		return dob;
 	}
+	
+	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
 	public void setDob(LocalDate dob) {
 		this.dob = dob;
 	}
@@ -98,9 +112,11 @@ public class Person {
 	}
 	@Override
 	public String toString() {
-		return "Person [firstName=" + firstName + ", middleName=" + middleName + ", lastName=" + lastName + ", dob="
-				+ dob + ", fatherName=" + fatherName + ", motherName=" + motherName + ", maritalStatus=" + maritalStatus
-				+ ", email=" + email + ", mobile=" + mobile + ", alerternateMobile=" + alerternateMobile + ", height="
-				+ height + ", weight=" + weight + ", placeOfBirth=" + placeOfBirth + "]";
+		return "Profile [firstName=" + firstName + ", middleName=" + middleName + ", lastName=" + lastName
+				+ ", password=" + password + ", dob=" + dob + ", fatherName=" + fatherName + ", motherName="
+				+ motherName + ", maritalStatus=" + maritalStatus + ", email=" + email + ", mobile=" + mobile
+				+ ", alerternateMobile=" + alerternateMobile + ", height=" + height + ", weight=" + weight
+				+ ", placeOfBirth=" + placeOfBirth + "]";
 	}
+	
 }
