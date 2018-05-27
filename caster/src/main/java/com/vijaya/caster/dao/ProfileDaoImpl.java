@@ -166,7 +166,7 @@ public class ProfileDaoImpl implements ProfileDao {
 	@Override
 	public List<Profile> searchProfiles(String criteria) {
 		String sql = "select * from profiles";
-		List<Profile> profiles = this.jdbcTemplate.query(psc, rse)
+		//List<Profile> profiles = this.jdbcTemplate.query(psc, rse)
 		return null;
 	}
 

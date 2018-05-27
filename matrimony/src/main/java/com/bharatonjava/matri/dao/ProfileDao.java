@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.bharatonjava.matri.domain.Profile;
 
-public interface PatientDao {
+public interface ProfileDao {
 
 	public void saveProfile(Profile profile);
 

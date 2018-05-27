@@ -13,7 +13,7 @@
 	<h3>New User Registration</h3>
 </div>
 	
-<form:form method="POST" commandName="profile" cssClass="form-horizontal">
+<form:form method="POST" modelAttribute="profile" cssClass="form-horizontal">
 
 		<spring:bind path="firstName">
 			<div class="form-group ${status.error ? 'has-error' : ''}">
