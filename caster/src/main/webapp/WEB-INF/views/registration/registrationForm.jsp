@@ -119,9 +119,16 @@
 		</div>
 		<div class="form-group">
 			<div class="offset-md-2 col-sm-6">
-				<button type="submit" class="btn btn-default">Submit</button>
+				<button type="submit" class="btn btn-success">Submit</button>
 			</div>
 		</div>
-		
+		<div class="form-group">
+			<div class="offset-md-2 col-sm-6">
+				<p class="text-success">Already Registered? Please <a href='<c:url value="/home" ></c:url>'>click here to login</a></p>
+			</div>
+		</div>
 	</form:form>
+	
+	
+	
 </div>

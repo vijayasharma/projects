@@ -8,19 +8,25 @@
 
 
 <div class="container-fluid">
-	<div class="row bg-light text-secondary text-center">
-		<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 col-12" >
-			&copy; 2017 by Vijaya Sharma. All rights reserved.
-		</div>
-	</div>
-	<div class="row bg-light text-secondary text-center">
-	<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 col-12">
-			
-			<spring:url value="/aboutUs" var="aboutUsVar" htmlEscape="true"/>
-			<spring:url value="/home" var="homeVar" htmlEscape="true"/>
-			<a href="${homeVar}">Home</a> | <a href="${aboutUsVar}">About Us</a> | <a href='<spring:url value="/contactUs"/>'>Contact Us</a> 
-			|  <a href='<spring:url value="/user/register"/>'>Register</a> 
-			
+
+	<div class="card">
+		<div class="card-body bg-light">
+
+			<div class="row bg-light text-secondary text-center">
+				<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 col-12">
+					&copy; 2017 by Vijaya Sharma. All rights reserved.</div>
+			</div>
+			<div class="row bg-light text-secondary text-center">
+				<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 col-12">
+
+					<spring:url value="/aboutUs" var="aboutUsVar" htmlEscape="true" />
+					<spring:url value="/home" var="homeVar" htmlEscape="true" />
+					<a href="${homeVar}">Home</a> | <a href="${aboutUsVar}">About
+						Us</a> | <a href='<spring:url value="/contactUs"/>'>Contact Us</a> | <a
+						href='<spring:url value="/user/register"/>'>Register</a>
+
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
