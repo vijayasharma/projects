@@ -12,11 +12,12 @@
 <div class="page-header">
 	<h3>New User Registration</h3>
 </div>
-	
+
+<hr>
 <form:form method="POST" modelAttribute="profile" cssClass="form-horizontal">
 
 		<spring:bind path="firstName">
-			<div class="form-group ${status.error ? 'has-error' : ''}">
+			<div class="form-group ${status.error ? 'has-error' : ''} row">
 				<label class="control-label col-sm-2" for="email">Name:</label>
 				<div class="col-sm-3">
 					<form:input path="firstName" value="${firstName}" class="form-control" id="firstName" placeholder="First Name" />
@@ -32,7 +33,7 @@
 
 
 		<spring:bind path="gender">
-			<div class="form-group ${status.error ? 'has-error' : ''}">
+			<div class="form-group ${status.error ? 'has-error' : ''} row">
 				<form:label path="gender" cssClass="col-sm-2 control-label">Gender</form:label>
 				<div class="col-sm-6">
 					<label class="radio-inline"> <form:radiobutton path="gender" value="Male" /> Male</label>
@@ -46,7 +47,7 @@
 
 
 		<spring:bind path="dateOfBirth">
-			<div class="form-group ${status.error ? 'has-error' : ''}">
+			<div class="form-group ${status.error ? 'has-error' : ''} row">
 				<form:label path="dateOfBirth" cssClass="col-sm-2 control-label">Date Of Birth</form:label>
 				<div class="col-sm-6">
 					<fmt:formatDate value="${dateOfBirth}" var="dateString" pattern="dd/MM/yyyy" />
@@ -59,7 +60,7 @@
 		</spring:bind>
 
 		<spring:bind path="email">
-			<div class="form-group ${status.error ? 'has-error' : ''}">
+			<div class="form-group ${status.error ? 'has-error' : ''} row">
 				<form:label path="email" cssClass="col-sm-2 control-label">Email</form:label>
 				<div class="col-sm-6">
 					<form:input path="email" value="${email}" cssClass="form-control"
@@ -72,7 +73,7 @@
 		</spring:bind>
 		
 		<spring:bind path="password">
-			<div class="form-group ${status.error ? 'has-error' : ''}">
+			<div class="form-group ${status.error ? 'has-error' : ''} row">
 				<form:label path="password" cssClass="col-sm-2 control-label">Password</form:label>
 				
 				<div class="col-sm-6">
@@ -85,7 +86,7 @@
 		</spring:bind>
 		
 		<spring:bind path="confPassword">
-			<div class="form-group ${status.error ? 'has-error' : ''}">
+			<div class="form-group ${status.error ? 'has-error' : ''} row">
 				<form:label path="confPassword" cssClass="col-sm-2 control-label">Confirm Password</form:label>
 				
 				<div class="col-sm-6">
@@ -98,7 +99,7 @@
 		</spring:bind>
 		
 		<spring:bind path="phone">		
-			<div class="form-group ${status.error ? 'has-error' : ''}">
+			<div class="form-group ${status.error ? 'has-error' : ''} row">
 				<form:label path="phone" cssClass="col-sm-2 control-label">Mobile Number</form:label>
 				<div class="col-sm-6">
 					<form:input path="phone" value="${phone}" cssClass="form-control" placeholder="10 digit Mobile Number" maxlength="10" />
@@ -109,15 +110,15 @@
 			</div>
 		</spring:bind>		
 
-		<div class="form-group ${status.error ? 'has-error' : ''}">
-			<div class="col-sm-offset-2 col-sm-6">
+		<div class="form-group ${status.error ? 'has-error' : ''} row">
+			<div class="offset-md-2 col-sm-6">
 				<div class="checkbox">
 					<label><input type="checkbox">Agree to terms and conditions of this website</label>
 				</div>
 			</div>
 		</div>
 		<div class="form-group">
-			<div class="col-sm-offset-2 col-sm-6">
+			<div class="offset-md-2 col-sm-6">
 				<button type="submit" class="btn btn-default">Submit</button>
 			</div>
 		</div>

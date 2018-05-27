@@ -8,11 +8,13 @@
 
 
 <div class="container-fluid">
-	<div class="row">
-		<div class="col-sm-3">
+	<div class="row bg-light text-secondary text-center">
+		<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 col-12" >
 			&copy; 2017 by Vijaya Sharma. All rights reserved.
 		</div>
-		<div class="col-sm-9">
+	</div>
+	<div class="row bg-light text-secondary text-center">
+	<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 col-12">
 			
 			<spring:url value="/aboutUs" var="aboutUsVar" htmlEscape="true"/>
 			<spring:url value="/home" var="homeVar" htmlEscape="true"/>
