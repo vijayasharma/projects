@@ -14,15 +14,15 @@
 		<h4>Update Profile</h4>
 	</div>
 	
-	<form:form method="POST" commandName="p" cssClass="form-horizontal">
+	<form:form method="POST" modelAttribute="p" cssClass="form-horizontal">
 	
 	<form:hidden path="profileId"/>
 	
-	<div class="panel panel-default">
-  		<div class="panel-heading">Basic Information</div>
-		<div class="panel-body">
+	<div class="card border-info mb-2">
+  		<div class="card-header">Basic Information</div>
+		<div class="card-body">
 			<spring:bind path="firstName">
-				<div class="form-group ${status.error ? 'has-error' : ''}">
+				<div class="form-row ${status.error ? 'has-error' : ''}">
 					<div class="col-sm-3">
 						<label class="control-label" for="firstName">Name:</label>
 					</div>
@@ -39,7 +39,7 @@
 			</spring:bind>
 			
 			<spring:bind path="gender">
-				<div class="form-group ${status.error ? 'has-error' : ''}">
+				<div class="form-row ${status.error ? 'has-error' : ''}">
 					<div class="col-sm-3">
 						<form:label path="gender" cssClass="control-label">Gender</form:label>
 					</div>
@@ -54,7 +54,7 @@
 			</spring:bind>
 	
 			<spring:bind path="dateOfBirth">
-				<div class="form-group ${status.error ? 'has-error' : ''}">
+				<div class="form-row ${status.error ? 'has-error' : ''}">
 					<div class="col-sm-3">
 						<form:label path="dateOfBirth" cssClass="control-label">Date Of Birth</form:label>
 					</div>
@@ -69,7 +69,7 @@
 			</spring:bind>
 	
 			<spring:bind path="email">
-				<div class="form-group ${status.error ? 'has-error' : ''}">
+				<div class="form-row ${status.error ? 'has-error' : ''}">
 					<div class="col-sm-3">
 						<form:label path="email" cssClass="control-label">Email</form:label>
 					</div>
@@ -84,7 +84,7 @@
 			</spring:bind>
 			
 			<spring:bind path="phone">		
-				<div class="form-group ${status.error ? 'has-error' : ''}">
+				<div class="form-row ${status.error ? 'has-error' : ''}">
 					<div class="col-sm-3">
 						<form:label path="phone" cssClass="control-label">Mobile Number</form:label>
 					</div>
@@ -98,9 +98,9 @@
 			</spring:bind>		
 
 			<spring:bind path="alternatePhone">		
-				<div class="form-group ${status.error ? 'has-error' : ''}">
+				<div class="form-row ${status.error ? 'has-error' : ''}">
 					<div class="col-sm-3">
-						<form:label path="alternatePhone" cssClass="control-label">Alternate Mobile Number</form:label>
+						<form:label path="alternatePhone" cssClass="control-label">Alternate Number</form:label>
 					</div>
 					<div class="col-sm-6">
 						<form:input path="alternatePhone" value="${alternatePhone}" cssClass="form-control" placeholder="10 digit Mobile Number" maxlength="10" />
@@ -112,7 +112,7 @@
 			</spring:bind>		
 	
 			<spring:bind path="maritalStatus">
-				<div class="form-group ${status.error ? 'has-error' : ''}">
+				<div class="form-row ${status.error ? 'has-error' : ''}">
 					<div class="col-sm-3">
 						<form:label path="maritalStatus" cssClass="control-label">Marital Status</form:label>
 					</div>
@@ -131,7 +131,7 @@
 			</spring:bind>
 			
 			<spring:bind path="height">
-				<div class="form-group ${status.error ? 'has-error' : ''}">
+				<div class="form-row ${status.error ? 'has-error' : ''}">
 					<div class="col-sm-3">
 						<form:label path="height" cssClass="control-label">Height</form:label>
 					</div>
@@ -149,7 +149,7 @@
 			</spring:bind>
 			
 			<spring:bind path="bodyType">
-				<div class="form-group ${status.error ? 'has-error' : ''}">
+				<div class="form-row ${status.error ? 'has-error' : ''}">
 					<div class="col-sm-3">
 						<form:label path="bodyType" cssClass="control-label">Body Type</form:label>
 					</div>
@@ -167,7 +167,7 @@
 			</spring:bind>
 			
 			<spring:bind path="weight">		
-				<div class="form-group ${status.error ? 'has-error' : ''}">
+				<div class="form-row ${status.error ? 'has-error' : ''}">
 					<div class="col-sm-3">
 						<form:label path="weight" cssClass="control-label">Weight (Kg)</form:label>
 					</div>
@@ -181,7 +181,7 @@
 			</spring:bind>
 			
 			<spring:bind path="healthInformation">		
-				<div class="form-group ${status.error ? 'has-error' : ''}">
+				<div class="form-row ${status.error ? 'has-error' : ''}">
 					<div class="col-sm-3">
 						<form:label path="healthInformation" cssClass="control-label">Health Information</form:label>
 					</div>
@@ -195,7 +195,7 @@
 			</spring:bind>		
 	
 			<spring:bind path="skinTone">		
-				<div class="form-group ${status.error ? 'has-error' : ''}">
+				<div class="form-row ${status.error ? 'has-error' : ''}">
 					<div class="col-sm-3">
 						<form:label path="skinTone" cssClass="control-label">Skin Tone</form:label>
 					</div>
@@ -214,7 +214,7 @@
 			</spring:bind>	
 	
 			<spring:bind path="bloodGroup">
-				<div class="form-group ${status.error ? 'has-error' : ''}">
+				<div class="form-row ${status.error ? 'has-error' : ''}">
 					<div class="col-sm-3">
 						<form:label path="bloodGroup" cssClass="control-label">Blood Group</form:label>
 					</div>
@@ -233,11 +233,11 @@
 		</div>
 		</div> <!-- Basic information panel ends -->
 		
-		<div class="panel panel-default">
-  			<div class="panel-heading">Religious Background</div>
-			<div class="panel-body">
+		<div class="card border-info mb-2">
+  			<div class="card-header">Religious Background</div>
+			<div class="card-body">
 				<spring:bind path="religion">
-					<div class="form-group ${status.error ? 'has-error' : ''}">
+					<div class="form-row ${status.error ? 'has-error' : ''}">
 						<div class="col-sm-3">
 							<form:label path="religion" cssClass="control-label">Religion</form:label>
 						</div>
@@ -254,7 +254,7 @@
 					</div>
 				</spring:bind>
 				<spring:bind path="motherTongue">		
-					<div class="form-group ${status.error ? 'has-error' : ''}">
+					<div class="form-row ${status.error ? 'has-error' : ''}">
 						<div class="col-sm-3">
 							<form:label path="motherTongue" cssClass="control-label">Mother Tongue</form:label>
 						</div>
@@ -267,7 +267,7 @@
 					</div>
 				</spring:bind>
 				<spring:bind path="community">		
-					<div class="form-group ${status.error ? 'has-error' : ''}">
+					<div class="form-row ${status.error ? 'has-error' : ''}">
 						<div class="col-sm-3">
 							<form:label path="community" cssClass="control-label">Community</form:label>
 						</div>
@@ -280,7 +280,7 @@
 					</div>
 				</spring:bind>
 				<spring:bind path="subCommunity">		
-					<div class="form-group ${status.error ? 'has-error' : ''}">
+					<div class="form-row ${status.error ? 'has-error' : ''}">
 						<div class="col-sm-3">
 							<form:label path="subCommunity" cssClass="control-label">Sub Community</form:label>
 						</div>
@@ -293,7 +293,7 @@
 					</div>
 				</spring:bind>
 				<spring:bind path="gotra">		
-					<div class="form-group ${status.error ? 'has-error' : ''}">
+					<div class="form-row ${status.error ? 'has-error' : ''}">
 						<div class="col-sm-3">
 							<form:label path="gotra" cssClass="control-label">Gotra</form:label>
 						</div>
@@ -309,10 +309,10 @@
 		</div> <!-- Religious background panel ends here -->
 		
 		
-		<div class="form-group">
+		<div class="form-row">
 			<div class="col-sm-3"></div>
 			<div class="col-sm-9">
-				<button type="submit" class="btn btn-default">Submit</button>
+				<button type="submit" class="btn btn-default">Save</button>
 			</div>
 		</div>
 	</form:form>

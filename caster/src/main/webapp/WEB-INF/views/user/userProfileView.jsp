@@ -20,9 +20,9 @@
 			</c:when>
 			<c:otherwise>
 	
-				<div class="panel panel-default">
-		  			<div class="panel-heading text-left">Basic Information <a href='<c:url value="/user/profile/edit"/>' class="btn btn-xs btn-primary pull-right">Edit Profile</a></div>
-		  			<div class="panel-body">
+				<div class="card border-info mb-2">
+		  			<div class="card-header text-left">Basic Information</div>
+		  			<div class="card-body">
 		
 						<div class="row">
 							<div class="col-sm-4">
@@ -115,15 +115,15 @@
 						</div>
 										
 		  			</div> <!-- Panel body ends -->
-		  			<div class="panel-footer text-right">
+		  			<div class="card-footer text-right">
 		  				<a href='<c:url value="/user/profile/edit"/>' class="btn btn-xs btn-primary">Edit Profile</a>
 		  			</div>
 				</div>
 				
 				<%-- Religious Background --%>
-				<div class="panel panel-default">
-		  			<div class="panel-heading text-left">Religious Background <a href='<c:url value="/user/profile/edit"/>' class="btn btn-xs btn-primary pull-right">Edit Profile</a></div>
-		  			<div class="panel-body">
+				<div class="card border-info mb-2">
+		  			<div class="card-header text-left">Religious Background</div>
+		  			<div class="card-body">
 		
 						<div class="row">
 							<div class="col-sm-4">
@@ -167,7 +167,7 @@
 						</div>
 										
 		  			</div> <!-- Panel body ends -->
-		  			<div class="panel-footer text-right">
+		  			<div class="card-footer text-right">
 		  				<a href='<c:url value="/user/profile/edit"/>' class="btn btn-xs btn-primary">Edit Profile</a>
 		  			</div>
 				</div>

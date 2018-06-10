@@ -1,24 +1,32 @@
 package com.vijaya.caster.web;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
-@Controller
+import com.vijaya.caster.domain.Profile;
+
+@RestController
 public class SearchController {
 
 	private static final Logger logger = LoggerFactory.getLogger(SearchController.class);
 		
 	@RequestMapping(value="/search")
-	public ModelAndView search(@RequestParam("q") String query){
+	public List<Profile> search(@RequestParam("q") String query){
 		
-		ModelAndView mav = new ModelAndView();
-		mav.setViewName("searchResults");
+		List<Profile> list = new ArrayList<>();
 		
-		return mav;
+		Profile p = new Profile();
+		p.setFirstName("Aayti");
+		p.setLastName("Arora");
+		list.add(p);
+		return list;
 		
 	}
 }

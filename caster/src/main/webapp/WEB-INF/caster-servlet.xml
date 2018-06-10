@@ -20,11 +20,14 @@
 
 	<import resource="security-config.xml" />
 
-	<context:component-scan base-package="com.vijaya.caster" />
-	<context:property-placeholder location="classpath:placeholder.properties" />
+	<context:component-scan
+		base-package="com.vijaya.caster" />
+	<context:property-placeholder
+		location="classpath:placeholder.properties" />
 	<!-- <context:annotation-config /> -->
 	<mvc:annotation-driven />
-	<mvc:resources mapping="/resources/**" location="/resources/" />
+	<mvc:resources mapping="/resources/**"
+		location="/resources/" />
 
 	<bean id="tilesConfigurer"
 		class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
@@ -46,14 +49,17 @@
 		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
 		<!-- this property to be removed in prod -->
 		<property name="useCodeAsDefaultMessage" value="true" />
-		<property name="basename" value="WEB-INF/messages_en_US.properties" />
+		<property name="basename"
+			value="WEB-INF/messages_en_US.properties" />
 	</bean>
+
 
 	<!-- spring jdbc configurtion -->
 
-	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
-		destroy-method="close">
-		<property name="driverClassName" value="${jdbc.driverClassName}" />
+	<bean id="dataSource"
+		class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<property name="driverClassName"
+			value="${jdbc.driverClassName}" />
 		<property name="url" value="${jdbc.databaseurl}" />
 		<property name="username" value="${jdbc.username}" />
 		<property name="password" value="${jdbc.password}" />
@@ -62,24 +68,28 @@
 		<property name="maxActive" value="20" />
 	</bean>
 
-	<tx:annotation-driven transaction-manager="transactionManager" />
+	<tx:annotation-driven
+		transaction-manager="transactionManager" />
 
 	<bean id="transactionManager"
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<property name="dataSource" ref="dataSource" />
 	</bean>
-	
-	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+
+	<bean id="jdbcTemplate"
+		class="org.springframework.jdbc.core.JdbcTemplate">
 		<property name="dataSource" ref="dataSource" />
 	</bean>
-	
-	<bean id="namedParameterJdbcTemplate" class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
+
+	<bean id="namedParameterJdbcTemplate"
+		class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
 		<constructor-arg name="dataSource" ref="dataSource" />
 	</bean>
-	
-	<bean class="org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator">
+
+	<bean
+		class="org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator">
 		<property name="databaseProductName" value="MySql" />
 		<property name="dataSource" ref="dataSource" />
 	</bean>
-	
+
 </beans>
