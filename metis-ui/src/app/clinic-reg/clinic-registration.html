@@ -1,0 +1,62 @@
+<h3>Clinic Registration Form:</h3>
+<hr />
+<form [formGroup]="clinicRegForm" (ngSubmit)="onRegisterClinicFormSubmit()">
+    <h4>Clinic Details</h4>
+    <div class="form-group row">
+        <label for="clinicName" class="col-sm-2 col-form-label">Clinic Name</label>
+        <div class="col-sm-5">
+            <input type="text" class="form-control form-control-sm" id="clinicName" formControlName="clinicName">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="ownerName" class="col-sm-2 col-form-label">Clinic Owner Name</label>
+        <div class="col-sm-5">
+            <input type="text" class="form-control form-control-sm" id="ownerName" formControlName="ownerName">
+        </div>
+    </div>
+    <h4>Address</h4>
+    <div formGroupName="address">
+        <div class="form-group row">
+            <label for="houseNo" class="col-sm-2 col-form-label">House No</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control form-control-sm" formControlName="houseNo">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="street" class="col-sm-2 col-form-label">Street</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control form-control-sm" formControlName="street">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="area" class="col-sm-2 col-form-label">Area</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control form-control-sm" formControlName="area">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="state" class="col-sm-2 col-form-label">State</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control form-control-sm" formControlName="state">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="postcode" class="col-sm-2 col-form-label">Postcode</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control form-control-sm" formControlName="postcode">
+            </div>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-2">
+            <input type="submit" class="btn btn-success form-control form-control-sm"
+                [disabled]="!clinicRegForm.valid" />
+        </div>
+        <div class="col-sm-2">
+            <button (click)="onRegisterClinicFormReset()"
+                class="btn btn-info form-control form-control-sm">Clear</button>
+        </div>
+    </div>
+
+</form>
