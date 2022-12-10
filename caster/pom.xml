@@ -9,7 +9,7 @@
 	<name>caster Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 	<properties>
-		<spring.version>5.0.6.RELEASE</spring.version>
+		<spring.version>6.0.0</spring.version>
 		<spring.security.version>5.0.5.RELEASE</spring.security.version>
 		<hibernate.version>5.3.1.Final</hibernate.version>
 		<jackson.library>2.9.4</jackson.library>
